@@ -219,10 +219,26 @@
             color: var(--accent);
         }
 
+        .section h4 {
+            font-size: 18px;
+            margin: 20px 0 10px;
+            color: var(--text-primary);
+        }
+
         .section p {
             color: var(--text-secondary);
             margin-bottom: 20px;
             line-height: 1.7;
+        }
+
+        .section ul {
+            margin-left: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .section ul li {
+            margin-bottom: 8px;
         }
 
         .steps {
@@ -509,6 +525,10 @@
                 <div class="icon">📦</div>
                 <div class="label translatable">Installation</div>
             </div>
+            <div class="quick-nav-item" onclick="scrollToSection('vps-broker')">
+                <div class="icon">🖥️</div>
+                <div class="label translatable">VPS & Broker</div>
+            </div>
             <div class="quick-nav-item" onclick="scrollToSection('demo')">
                 <div class="icon">🧪</div>
                 <div class="label translatable">Demo Setup</div>
@@ -596,6 +616,183 @@
                 <div>
                     <strong class="translatable">Installation Complete!</strong>
                     <p class="translatable">Your GTAlgo bot is now installed and ready to use.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VPS & BROKER REQUIREMENTS -->
+        <div class="section" id="vps-broker">
+            <h2><span class="icon">🖥️</span><span class="translatable">VPS & Broker Requirements</span></h2>
+            
+            <div class="warning-box">
+                <div class="icon">⚠️</div>
+                <div>
+                    <strong class="translatable">Important: 24/7 Operation Required</strong>
+                    <p class="translatable">For your trading bots to work properly, MetaTrader 5 must remain open and connected to the internet 24/7. This means you have two options: keep your computer running continuously, or use a VPS (Virtual Private Server).</p>
+                </div>
+            </div>
+
+            <h3 class="translatable">Option 1: Keep Your PC Running 24/7</h3>
+            <p class="translatable">You can keep your personal computer running with MT5 open at all times. However, this has several drawbacks:</p>
+            <ul>
+                <li class="translatable">High electricity costs from running your PC continuously</li>
+                <li class="translatable">Risk of missing trades during internet outages or PC restarts</li>
+                <li class="translatable">Wear and tear on your personal computer hardware</li>
+                <li class="translatable">Limited mobility - you can't turn off your PC without stopping the bot</li>
+            </ul>
+
+            <h3 class="translatable">Option 2: Use a VPS (Recommended)</h3>
+            
+            <div class="info-box">
+                <div class="icon">💡</div>
+                <div>
+                    <strong class="translatable">What is a VPS?</strong>
+                    <p class="translatable">A VPS (Virtual Private Server) is a remote computer that runs in the cloud 24/7. You can connect to it from anywhere, install MT5 on it, and your trading bots will run continuously without needing to keep your personal computer on. Think of it as renting a computer that's always online and optimized for trading.</p>
+                </div>
+            </div>
+
+            <div class="success-box">
+                <div class="icon">⚡</div>
+                <div>
+                    <strong class="translatable">Why Use a VPS for Trading?</strong>
+                    <ul style="margin-top: 10px; color: var(--text-secondary);">
+                        <li class="translatable"><strong>Ultra-Low Latency:</strong> VPS servers are located close to broker servers, ensuring faster order execution</li>
+                        <li class="translatable"><strong>99.9% Uptime:</strong> Professional-grade infrastructure ensures your bots never miss a trading opportunity</li>
+                        <li class="translatable"><strong>Cost-Effective:</strong> Much cheaper than running your PC 24/7, with lower electricity bills</li>
+                        <li class="translatable"><strong>Freedom:</strong> Trade from anywhere - your bots run independently of your personal computer</li>
+                        <li class="translatable"><strong>Professional Environment:</strong> Optimized Windows servers specifically designed for MT5 trading</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="translatable">Recommended VPS Provider</h3>
+            <p class="translatable">We recommend ForexVPS for trading because of their excellent performance, reliability, and specialized infrastructure for forex and CFD trading:</p>
+            
+            <div class="code-block" style="background: linear-gradient(135deg, rgba(0, 113, 227, 0.1), rgba(0, 113, 227, 0.05)); border: 1px solid var(--accent);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                    <div>
+                        <strong style="color: var(--accent); font-size: 16px;">ForexVPS - Professional Trading VPS</strong>
+                        <p style="color: var(--text-secondary); margin: 8px 0; font-size: 13px;" class="translatable">Ultra-fast servers optimized for MT5 | 99.9% uptime guarantee | 24/7 support</p>
+                    </div>
+                    <a href="https://www.forexvps.net/?aff=119612" target="_blank" rel="noopener" style="background: var(--accent); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; white-space: nowrap; transition: all 0.3s ease;">
+                        <span class="translatable">Get ForexVPS →</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 20px;">
+                <div class="icon">ℹ️</div>
+                <div>
+                    <p class="translatable">You can choose any VPS provider you prefer, but we specifically recommend ForexVPS for their proven track record, excellent speed, strategic server locations near major broker data centers, and competitive pricing. Plans typically start from $12-20/month.</p>
+                </div>
+            </div>
+
+            <h3 class="translatable">Setting Up MT5 on Your VPS</h3>
+            <div class="steps">
+                <div class="step">
+                    <h4 class="translatable">Purchase VPS Plan</h4>
+                    <p class="translatable">Choose a plan that suits your needs (minimum 2GB RAM recommended for MT5).</p>
+                </div>
+
+                <div class="step">
+                    <h4 class="translatable">Connect to Your VPS</h4>
+                    <p class="translatable">Use Remote Desktop Connection (Windows) or a similar tool to access your VPS. Your VPS provider will send you connection details via email.</p>
+                </div>
+
+                <div class="step">
+                    <h4 class="translatable">Install MT5 on VPS</h4>
+                    <p class="translatable">Download and install MetaTrader 5 on your VPS just like you would on your personal computer.</p>
+                </div>
+
+                <div class="step">
+                    <h4 class="translatable">Install Your Bot</h4>
+                    <p class="translatable">Follow the same installation steps from above to install your GTAlgo bot on the VPS.</p>
+                </div>
+
+                <div class="step">
+                    <h4 class="translatable">Run 24/7</h4>
+                    <p class="translatable">Once configured, you can disconnect from the VPS and your bot will continue running independently. You can reconnect anytime to check on performance.</p>
+                </div>
+            </div>
+
+            <h3 class="translatable" style="margin-top: 50px;">Broker Requirements</h3>
+            
+            <div class="info-box">
+                <div class="icon">🏦</div>
+                <div>
+                    <strong class="translatable">Choosing the Right Broker</strong>
+                    <p class="translatable">To trade with GTAlgo bots, you need a reliable broker that supports MetaTrader 5. The broker you choose is crucial for your trading success - they execute your trades, provide market access, and determine your trading conditions like spreads, commissions, and execution speed.</p>
+                </div>
+            </div>
+
+            <h4 class="translatable">Recommended Brokers for GTAlgo</h4>
+            <p class="translatable">We recommend these two brokers for their excellent reliability, competitive spreads, fast execution, and MT5 support:</p>
+
+            <!-- IC Markets -->
+            <div class="code-block" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05)); border: 1px solid var(--green); margin-top: 20px;">
+                <div style="padding: 10px 0;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 20px;">
+                        <div style="flex: 1; min-width: 250px;">
+                            <strong style="color: var(--green); font-size: 18px;">IC Markets</strong>
+                            <p style="color: var(--text-secondary); margin: 10px 0 15px 0; line-height: 1.6;" class="translatable">One of the world's largest forex brokers, known for ultra-tight spreads and lightning-fast execution. Perfect for algorithmic trading with deep liquidity and institutional-grade infrastructure.</p>
+                            
+                            <div style="margin-top: 15px;">
+                                <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 8px;" class="translatable">Key Features:</p>
+                                <ul style="margin-left: 20px; color: var(--text-secondary); line-height: 1.8;">
+                                    <li class="translatable">Spreads from 0.0 pips on major pairs</li>
+                                    <li class="translatable">Ultra-fast execution speed (avg. 40ms)</li>
+                                    <li class="translatable">No dealing desk (NDD) execution</li>
+                                    <li class="translatable">Regulated by ASIC, CySEC, FSA</li>
+                                    <li class="translatable">Excellent for scalping and automated trading</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#" id="icmarkets-link" target="_blank" rel="noopener" style="background: var(--green); color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; white-space: nowrap; transition: all 0.3s ease; align-self: flex-start;">
+                            <span class="translatable">Open IC Markets Account →</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pepperstone -->
+            <div class="code-block" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05)); border: 1px solid var(--green); margin-top: 20px;">
+                <div style="padding: 10px 0;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 20px;">
+                        <div style="flex: 1; min-width: 250px;">
+                            <strong style="color: var(--green); font-size: 18px;">Pepperstone</strong>
+                            <p style="color: var(--text-secondary); margin: 10px 0 15px 0; line-height: 1.6;" class="translatable">Award-winning broker with a strong reputation for transparency and reliability. Offers excellent trading conditions with competitive pricing and top-tier regulation across multiple jurisdictions.</p>
+                            
+                            <div style="margin-top: 15px;">
+                                <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 8px;" class="translatable">Key Features:</p>
+                                <ul style="margin-left: 20px; color: var(--text-secondary); line-height: 1.8;">
+                                    <li class="translatable">Tight spreads from 0.0 pips (Razor account)</li>
+                                    <li class="translatable">Advanced trading technology and infrastructure</li>
+                                    <li class="translatable">Multiple regulatory licenses (FCA, ASIC, CySEC, etc.)</li>
+                                    <li class="translatable">Free VPS available for qualifying accounts</li>
+                                    <li class="translatable">24/5 multilingual customer support</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#" id="pepperstone-link" target="_blank" rel="noopener" style="background: var(--green); color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; white-space: nowrap; transition: all 0.3s ease; align-self: flex-start;">
+                            <span class="translatable">Open Pepperstone Account →</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box" style="margin-top: 25px;">
+                <div class="icon">💡</div>
+                <div>
+                    <strong class="translatable">Broker Comparison Tips</strong>
+                    <p class="translatable">Both brokers are excellent choices for automated trading. IC Markets is ideal if you prioritize the absolute lowest spreads and fastest execution, while Pepperstone offers a great all-around package with additional perks like free VPS for active traders. You can also open demo accounts with both to test their platforms before committing.</p>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 20px;">
+                <div class="icon">ℹ️</div>
+                <div>
+                    <strong class="translatable">Using Other Brokers</strong>
+                    <p class="translatable">While we recommend IC Markets and Pepperstone, GTAlgo bots work with any broker that supports MetaTrader 5. Make sure your broker offers good execution speed, competitive spreads, and is properly regulated before opening an account.</p>
                 </div>
             </div>
         </div>
@@ -1619,7 +1816,7 @@
                     <strong class="translatable">Need Help?</strong>
                     <p class="translatable">If you encounter any issues or have questions, reach out through:</p>
                     <ul style="margin-top: 10px; color: var(--text-secondary);">
-                        <li><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7704020707180503371003161b10185914181a">[email&#160;protected]</a></li>
+                        <li><strong>Email:</strong> support@gtalgo.com</li>
                         <li><strong>Whop Community:</strong> <span class="translatable">Access via your Whop dashboard</span></li>
                         <li><strong>Website:</strong> https://www.gtalgo.com</li>
                     </ul>
@@ -1648,13 +1845,14 @@
         <p class="translatable">Professional trading bots for MetaTrader 5</p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Language Translations
         const translations = {
             en: {
                 'Complete Setup Guide': 'Complete Setup Guide',
                 'Everything you need to install, configure, and optimize your GTAlgo trading bots': 'Everything you need to install, configure, and optimize your GTAlgo trading bots',
                 'Installation': 'Installation',
+                'VPS & Broker': 'VPS & Broker',
                 'Demo Setup': 'Demo Setup',
                 'License': 'License',
                 'Backtesting': 'Backtesting',
@@ -1685,6 +1883,64 @@
                 'Open the Navigator panel (Ctrl+N), expand "Expert Advisors", and confirm your bot appears in the list.': 'Open the Navigator panel (Ctrl+N), expand "Expert Advisors", and confirm your bot appears in the list.',
                 'Installation Complete!': 'Installation Complete!',
                 'Your GTAlgo bot is now installed and ready to use.': 'Your GTAlgo bot is now installed and ready to use.',
+                'VPS & Broker Requirements': 'VPS & Broker Requirements',
+                'Important: 24/7 Operation Required': 'Important: 24/7 Operation Required',
+                'For your trading bots to work properly, MetaTrader 5 must remain open and connected to the internet 24/7. This means you have two options: keep your computer running continuously, or use a VPS (Virtual Private Server).': 'For your trading bots to work properly, MetaTrader 5 must remain open and connected to the internet 24/7. This means you have two options: keep your computer running continuously, or use a VPS (Virtual Private Server).',
+                'Option 1: Keep Your PC Running 24/7': 'Option 1: Keep Your PC Running 24/7',
+                'You can keep your personal computer running with MT5 open at all times. However, this has several drawbacks:': 'You can keep your personal computer running with MT5 open at all times. However, this has several drawbacks:',
+                'High electricity costs from running your PC continuously': 'High electricity costs from running your PC continuously',
+                'Risk of missing trades during internet outages or PC restarts': 'Risk of missing trades during internet outages or PC restarts',
+                'Wear and tear on your personal computer hardware': 'Wear and tear on your personal computer hardware',
+                'Limited mobility - you can\'t turn off your PC without stopping the bot': 'Limited mobility - you can\'t turn off your PC without stopping the bot',
+                'Option 2: Use a VPS (Recommended)': 'Option 2: Use a VPS (Recommended)',
+                'What is a VPS?': 'What is a VPS?',
+                'A VPS (Virtual Private Server) is a remote computer that runs in the cloud 24/7. You can connect to it from anywhere, install MT5 on it, and your trading bots will run continuously without needing to keep your personal computer on. Think of it as renting a computer that\'s always online and optimized for trading.': 'A VPS (Virtual Private Server) is a remote computer that runs in the cloud 24/7. You can connect to it from anywhere, install MT5 on it, and your trading bots will run continuously without needing to keep your personal computer on. Think of it as renting a computer that\'s always online and optimized for trading.',
+                'Why Use a VPS for Trading?': 'Why Use a VPS for Trading?',
+                '<strong>Ultra-Low Latency:</strong> VPS servers are located close to broker servers, ensuring faster order execution': '<strong>Ultra-Low Latency:</strong> VPS servers are located close to broker servers, ensuring faster order execution',
+                '<strong>99.9% Uptime:</strong> Professional-grade infrastructure ensures your bots never miss a trading opportunity': '<strong>99.9% Uptime:</strong> Professional-grade infrastructure ensures your bots never miss a trading opportunity',
+                '<strong>Cost-Effective:</strong> Much cheaper than running your PC 24/7, with lower electricity bills': '<strong>Cost-Effective:</strong> Much cheaper than running your PC 24/7, with lower electricity bills',
+                '<strong>Freedom:</strong> Trade from anywhere - your bots run independently of your personal computer': '<strong>Freedom:</strong> Trade from anywhere - your bots run independently of your personal computer',
+                '<strong>Professional Environment:</strong> Optimized Windows servers specifically designed for MT5 trading': '<strong>Professional Environment:</strong> Optimized Windows servers specifically designed for MT5 trading',
+                'Recommended VPS Provider': 'Recommended VPS Provider',
+                'We recommend ForexVPS for trading because of their excellent performance, reliability, and specialized infrastructure for forex and CFD trading:': 'We recommend ForexVPS for trading because of their excellent performance, reliability, and specialized infrastructure for forex and CFD trading:',
+                'Ultra-fast servers optimized for MT5 | 99.9% uptime guarantee | 24/7 support': 'Ultra-fast servers optimized for MT5 | 99.9% uptime guarantee | 24/7 support',
+                'Get ForexVPS →': 'Get ForexVPS →',
+                'You can choose any VPS provider you prefer, but we specifically recommend ForexVPS for their proven track record, excellent speed, strategic server locations near major broker data centers, and competitive pricing. Plans typically start from $12-20/month.': 'You can choose any VPS provider you prefer, but we specifically recommend ForexVPS for their proven track record, excellent speed, strategic server locations near major broker data centers, and competitive pricing. Plans typically start from $12-20/month.',
+                'Setting Up MT5 on Your VPS': 'Setting Up MT5 on Your VPS',
+                'Purchase VPS Plan': 'Purchase VPS Plan',
+                'Choose a plan that suits your needs (minimum 2GB RAM recommended for MT5).': 'Choose a plan that suits your needs (minimum 2GB RAM recommended for MT5).',
+                'Connect to Your VPS': 'Connect to Your VPS',
+                'Use Remote Desktop Connection (Windows) or a similar tool to access your VPS. Your VPS provider will send you connection details via email.': 'Use Remote Desktop Connection (Windows) or a similar tool to access your VPS. Your VPS provider will send you connection details via email.',
+                'Install MT5 on VPS': 'Install MT5 on VPS',
+                'Download and install MetaTrader 5 on your VPS just like you would on your personal computer.': 'Download and install MetaTrader 5 on your VPS just like you would on your personal computer.',
+                'Install Your Bot': 'Install Your Bot',
+                'Follow the same installation steps from above to install your GTAlgo bot on the VPS.': 'Follow the same installation steps from above to install your GTAlgo bot on the VPS.',
+                'Run 24/7': 'Run 24/7',
+                'Once configured, you can disconnect from the VPS and your bot will continue running independently. You can reconnect anytime to check on performance.': 'Once configured, you can disconnect from the VPS and your bot will continue running independently. You can reconnect anytime to check on performance.',
+                'Broker Requirements': 'Broker Requirements',
+                'Choosing the Right Broker': 'Choosing the Right Broker',
+                'To trade with GTAlgo bots, you need a reliable broker that supports MetaTrader 5. The broker you choose is crucial for your trading success - they execute your trades, provide market access, and determine your trading conditions like spreads, commissions, and execution speed.': 'To trade with GTAlgo bots, you need a reliable broker that supports MetaTrader 5. The broker you choose is crucial for your trading success - they execute your trades, provide market access, and determine your trading conditions like spreads, commissions, and execution speed.',
+                'Recommended Brokers for GTAlgo': 'Recommended Brokers for GTAlgo',
+                'We recommend these two brokers for their excellent reliability, competitive spreads, fast execution, and MT5 support:': 'We recommend these two brokers for their excellent reliability, competitive spreads, fast execution, and MT5 support:',
+                'One of the world\'s largest forex brokers, known for ultra-tight spreads and lightning-fast execution. Perfect for algorithmic trading with deep liquidity and institutional-grade infrastructure.': 'One of the world\'s largest forex brokers, known for ultra-tight spreads and lightning-fast execution. Perfect for algorithmic trading with deep liquidity and institutional-grade infrastructure.',
+                'Key Features:': 'Key Features:',
+                'Spreads from 0.0 pips on major pairs': 'Spreads from 0.0 pips on major pairs',
+                'Ultra-fast execution speed (avg. 40ms)': 'Ultra-fast execution speed (avg. 40ms)',
+                'No dealing desk (NDD) execution': 'No dealing desk (NDD) execution',
+                'Regulated by ASIC, CySEC, FSA': 'Regulated by ASIC, CySEC, FSA',
+                'Excellent for scalping and automated trading': 'Excellent for scalping and automated trading',
+                'Open IC Markets Account →': 'Open IC Markets Account →',
+                'Award-winning broker with a strong reputation for transparency and reliability. Offers excellent trading conditions with competitive pricing and top-tier regulation across multiple jurisdictions.': 'Award-winning broker with a strong reputation for transparency and reliability. Offers excellent trading conditions with competitive pricing and top-tier regulation across multiple jurisdictions.',
+                'Tight spreads from 0.0 pips (Razor account)': 'Tight spreads from 0.0 pips (Razor account)',
+                'Advanced trading technology and infrastructure': 'Advanced trading technology and infrastructure',
+                'Multiple regulatory licenses (FCA, ASIC, CySEC, etc.)': 'Multiple regulatory licenses (FCA, ASIC, CySEC, etc.)',
+                'Free VPS available for qualifying accounts': 'Free VPS available for qualifying accounts',
+                '24/5 multilingual customer support': '24/5 multilingual customer support',
+                'Open Pepperstone Account →': 'Open Pepperstone Account →',
+                'Broker Comparison Tips': 'Broker Comparison Tips',
+                'Both brokers are excellent choices for automated trading. IC Markets is ideal if you prioritize the absolute lowest spreads and fastest execution, while Pepperstone offers a great all-around package with additional perks like free VPS for active traders. You can also open demo accounts with both to test their platforms before committing.': 'Both brokers are excellent choices for automated trading. IC Markets is ideal if you prioritize the absolute lowest spreads and fastest execution, while Pepperstone offers a great all-around package with additional perks like free VPS for active traders. You can also open demo accounts with both to test their platforms before committing.',
+                'Using Other Brokers': 'Using Other Brokers',
+                'While we recommend IC Markets and Pepperstone, GTAlgo bots work with any broker that supports MetaTrader 5. Make sure your broker offers good execution speed, competitive spreads, and is properly regulated before opening an account.': 'While we recommend IC Markets and Pepperstone, GTAlgo bots work with any broker that supports MetaTrader 5. Make sure your broker offers good execution speed, competitive spreads, and is properly regulated before opening an account.',
                 'Demo Bot Setup': 'Demo Bot Setup',
                 'What is a Demo Bot?': 'What is a Demo Bot?',
                 'Demo bots are free, limited versions that allow you to test the strategy in backtest mode before purchasing the full version.': 'Demo bots are free, limited versions that allow you to test the strategy in backtest mode before purchasing the full version.',
@@ -1761,16 +2017,14 @@
                 'Recommended Value': 'Recommended Value',
                 'Description': 'Description',
                 'Risk per trade (percentage)': 'Risk per trade (percentage)',
-                'Moving average calculation period': 'Moving average calculation period',
-                'Entry filter threshold': 'Entry filter threshold',
-                'Lookback period for percentile': 'Lookback period for percentile',
-                'Auto-close positions at this hour': 'Auto-close positions at this hour',
-                'Limit to one position per day': 'Limit to one position per day',
-                'Maximum risk per trade': 'Maximum risk per trade',
-                'Entry filter threshold (%)': 'Entry filter threshold (%)',
                 'Maximum acceptable slippage (pips)': 'Maximum acceptable slippage (pips)',
-                'Auto-close positions at 22:00': 'Auto-close positions at 22:00',
                 '5-minute chart for analysis': '5-minute chart for analysis',
+                'Maximum risk per trade': 'Maximum risk per trade',
+                'Moving average calculation period': 'Moving average calculation period',
+                'Entry filter threshold (%)': 'Entry filter threshold (%)',
+                'Lookback period for percentile': 'Lookback period for percentile',
+                'Auto-close positions at 22:00': 'Auto-close positions at 22:00',
+                'Limit to one position per day': 'Limit to one position per day',
                 'Momentum Analysis (CCI, EMA, Linear Regression)': 'Momentum Analysis (CCI, EMA, Linear Regression)',
                 '3-hour chart for analysis': '3-hour chart for analysis',
                 'Risk percentage per trade': 'Risk percentage per trade',
@@ -1786,9 +2040,6 @@
                 'Stop loss coefficient': 'Stop loss coefficient',
                 'Trailing stop coefficient': 'Trailing stop coefficient',
                 'Breakout System': 'Breakout System',
-                'Volatility expansion multiplier': 'Volatility expansion multiplier',
-                'Bars to detect consolidation': 'Bars to detect consolidation',
-                'Enable false signal filtering': 'Enable false signal filtering',
                 'Risk Disclaimer': 'Risk Disclaimer',
                 'These settings are recommendations based on historical backtesting. Always adjust parameters according to your account balance and risk tolerance. Trading involves substantial risk of loss.': 'These settings are recommendations based on historical backtesting. Always adjust parameters according to your account balance and risk tolerance. Trading involves substantial risk of loss.',
                 'Support & Resources': 'Support & Resources',
@@ -1808,6 +2059,7 @@
                 'Complete Setup Guide': 'Ghid Complet de Configurare',
                 'Everything you need to install, configure, and optimize your GTAlgo trading bots': 'Tot ce ai nevoie pentru a instala, configura și optimiza roboții GTAlgo',
                 'Installation': 'Instalare',
+                'VPS & Broker': 'VPS & Broker',
                 'Demo Setup': 'Configurare Demo',
                 'License': 'Licență',
                 'Backtesting': 'Backtesting',
@@ -1838,6 +2090,64 @@
                 'Open the Navigator panel (Ctrl+N), expand "Expert Advisors", and confirm your bot appears in the list.': 'Deschide panoul Navigator (Ctrl+N), extinde "Expert Advisors" și confirmă că robotul apare în listă.',
                 'Installation Complete!': 'Instalare Finalizată!',
                 'Your GTAlgo bot is now installed and ready to use.': 'Robotul GTAlgo este acum instalat și gata de folosit.',
+                'VPS & Broker Requirements': 'Cerințe VPS & Broker',
+                'Important: 24/7 Operation Required': 'Important: Funcționare 24/7 Necesară',
+                'For your trading bots to work properly, MetaTrader 5 must remain open and connected to the internet 24/7. This means you have two options: keep your computer running continuously, or use a VPS (Virtual Private Server).': 'Pentru ca roboții de trading să funcționeze corect, MetaTrader 5 trebuie să rămână deschis și conectat la internet 24/7. Asta înseamnă că ai două opțiuni: să ții calculatorul pornit continuu sau să folosești un VPS (Virtual Private Server).',
+                'Option 1: Keep Your PC Running 24/7': 'Opțiunea 1: Ține PC-ul Pornit 24/7',
+                'You can keep your personal computer running with MT5 open at all times. However, this has several drawbacks:': 'Poți să ții calculatorul personal pornit cu MT5 deschis permanent. Totuși, aceasta are mai multe dezavantaje:',
+                'High electricity costs from running your PC continuously': 'Costuri mari de electricitate de la rularea continuă a PC-ului',
+                'Risk of missing trades during internet outages or PC restarts': 'Risc de a pierde tranzacții în timpul întreruperilor de internet sau repornirilor PC-ului',
+                'Wear and tear on your personal computer hardware': 'Uzura echipamentului computerului personal',
+                'Limited mobility - you can\'t turn off your PC without stopping the bot': 'Mobilitate limitată - nu poți opri PC-ul fără să oprești robotul',
+                'Option 2: Use a VPS (Recommended)': 'Opțiunea 2: Folosește un VPS (Recomandat)',
+                'What is a VPS?': 'Ce este un VPS?',
+                'A VPS (Virtual Private Server) is a remote computer that runs in the cloud 24/7. You can connect to it from anywhere, install MT5 on it, and your trading bots will run continuously without needing to keep your personal computer on. Think of it as renting a computer that\'s always online and optimized for trading.': 'Un VPS (Virtual Private Server) este un computer la distanță care rulează în cloud 24/7. Te poți conecta la el de oriunde, instalezi MT5 pe el și roboții tăi de trading vor rula continuu fără să fie nevoie să ții calculatorul personal pornit. Gândește-te la el ca la închirierea unui computer care este mereu online și optimizat pentru trading.',
+                'Why Use a VPS for Trading?': 'De Ce să Folosești un VPS pentru Trading?',
+                '<strong>Ultra-Low Latency:</strong> VPS servers are located close to broker servers, ensuring faster order execution': '<strong>Latență Ultra-Scăzută:</strong> Serverele VPS sunt situate aproape de serverele broker-ului, asigurând execuția mai rapidă a ordinelor',
+                '<strong>99.9% Uptime:</strong> Professional-grade infrastructure ensures your bots never miss a trading opportunity': '<strong>Disponibilitate 99.9%:</strong> Infrastructura de nivel profesional asigură că roboții tăi nu pierd niciodată o oportunitate de trading',
+                '<strong>Cost-Effective:</strong> Much cheaper than running your PC 24/7, with lower electricity bills': '<strong>Rentabil:</strong> Mult mai ieftin decât să rulezi PC-ul 24/7, cu facturi mai mici la electricitate',
+                '<strong>Freedom:</strong> Trade from anywhere - your bots run independently of your personal computer': '<strong>Libertate:</strong> Tranzacționează de oriunde - roboții tăi rulează independent de calculatorul personal',
+                '<strong>Professional Environment:</strong> Optimized Windows servers specifically designed for MT5 trading': '<strong>Mediu Profesional:</strong> Servere Windows optimizate special pentru trading MT5',
+                'Recommended VPS Provider': 'Furnizor VPS Recomandat',
+                'We recommend ForexVPS for trading because of their excellent performance, reliability, and specialized infrastructure for forex and CFD trading:': 'Recomandăm ForexVPS pentru trading datorită performanței excelente, fiabilității și infrastructurii specializate pentru trading forex și CFD:',
+                'Ultra-fast servers optimized for MT5 | 99.9% uptime guarantee | 24/7 support': 'Servere ultra-rapide optimizate pentru MT5 | Garanție 99.9% uptime | Suport 24/7',
+                'Get ForexVPS →': 'Obține ForexVPS →',
+                'You can choose any VPS provider you prefer, but we specifically recommend ForexVPS for their proven track record, excellent speed, strategic server locations near major broker data centers, and competitive pricing. Plans typically start from $12-20/month.': 'Poți alege orice furnizor VPS preferi, dar recomandăm special ForexVPS pentru track record-ul lor dovedit, viteza excelentă, locațiile strategice ale serverelor aproape de centrele de date ale brokerilor majori și prețurile competitive. Planurile încep de obicei de la $12-20/lună.',
+                'Setting Up MT5 on Your VPS': 'Configurarea MT5 pe VPS',
+                'Purchase VPS Plan': 'Achiziționează Plan VPS',
+                'Choose a plan that suits your needs (minimum 2GB RAM recommended for MT5).': 'Alege un plan care se potrivește nevoilor tale (minim 2GB RAM recomandat pentru MT5).',
+                'Connect to Your VPS': 'Conectează-te la VPS',
+                'Use Remote Desktop Connection (Windows) or a similar tool to access your VPS. Your VPS provider will send you connection details via email.': 'Folosește Remote Desktop Connection (Windows) sau un tool similar pentru a accesa VPS-ul. Furnizorul VPS îți va trimite detaliile de conexiune pe email.',
+                'Install MT5 on VPS': 'Instalează MT5 pe VPS',
+                'Download and install MetaTrader 5 on your VPS just like you would on your personal computer.': 'Descarcă și instalează MetaTrader 5 pe VPS exact ca pe calculatorul personal.',
+                'Install Your Bot': 'Instalează Robotul',
+                'Follow the same installation steps from above to install your GTAlgo bot on the VPS.': 'Urmează aceiași pași de instalare de mai sus pentru a instala robotul GTAlgo pe VPS.',
+                'Run 24/7': 'Rulează 24/7',
+                'Once configured, you can disconnect from the VPS and your bot will continue running independently. You can reconnect anytime to check on performance.': 'Odată configurat, te poți deconecta de la VPS și robotul va continua să ruleze independent. Te poți reconecta oricând pentru a verifica performanța.',
+                'Broker Requirements': 'Cerințe Broker',
+                'Choosing the Right Broker': 'Alegerea Brokerului Potrivit',
+                'To trade with GTAlgo bots, you need a reliable broker that supports MetaTrader 5. The broker you choose is crucial for your trading success - they execute your trades, provide market access, and determine your trading conditions like spreads, commissions, and execution speed.': 'Pentru a tranzacționa cu roboții GTAlgo, ai nevoie de un broker de încredere care suportă MetaTrader 5. Brokerul pe care îl alegi este crucial pentru succesul tău în trading - ei execută tranzacțiile tale, oferă acces la piață și determină condițiile de tranzacționare precum spread-urile, comisioanele și viteza de execuție.',
+                'Recommended Brokers for GTAlgo': 'Brokeri Recomandați pentru GTAlgo',
+                'We recommend these two brokers for their excellent reliability, competitive spreads, fast execution, and MT5 support:': 'Recomandăm acești doi brokeri pentru fiabilitatea lor excelentă, spread-urile competitive, execuția rapidă și suportul MT5:',
+                'One of the world\'s largest forex brokers, known for ultra-tight spreads and lightning-fast execution. Perfect for algorithmic trading with deep liquidity and institutional-grade infrastructure.': 'Unul dintre cei mai mari brokeri forex din lume, cunoscut pentru spread-uri ultra-strânse și execuție fulger. Perfect pentru trading algoritmic cu lichiditate profundă și infrastructură de nivel instituțional.',
+                'Key Features:': 'Caracteristici Cheie:',
+                'Spreads from 0.0 pips on major pairs': 'Spread-uri de la 0.0 pips pe perechi majore',
+                'Ultra-fast execution speed (avg. 40ms)': 'Viteză de execuție ultra-rapidă (medie 40ms)',
+                'No dealing desk (NDD) execution': 'Execuție fără dealing desk (NDD)',
+                'Regulated by ASIC, CySEC, FSA': 'Reglementat de ASIC, CySEC, FSA',
+                'Excellent for scalping and automated trading': 'Excelent pentru scalping și trading automatizat',
+                'Open IC Markets Account →': 'Deschide Cont IC Markets →',
+                'Award-winning broker with a strong reputation for transparency and reliability. Offers excellent trading conditions with competitive pricing and top-tier regulation across multiple jurisdictions.': 'Broker premiat cu o reputație solidă pentru transparență și fiabilitate. Oferă condiții excelente de tranzacționare cu prețuri competitive și reglementare de top în multiple jurisdicții.',
+                'Tight spreads from 0.0 pips (Razor account)': 'Spread-uri strânse de la 0.0 pips (cont Razor)',
+                'Advanced trading technology and infrastructure': 'Tehnologie și infrastructură avansată de trading',
+                'Multiple regulatory licenses (FCA, ASIC, CySEC, etc.)': 'Multiple licențe de reglementare (FCA, ASIC, CySEC, etc.)',
+                'Free VPS available for qualifying accounts': 'VPS gratuit disponibil pentru conturile eligibile',
+                '24/5 multilingual customer support': 'Suport clienți multilingv 24/5',
+                'Open Pepperstone Account →': 'Deschide Cont Pepperstone →',
+                'Broker Comparison Tips': 'Sfaturi Comparație Brokeri',
+                'Both brokers are excellent choices for automated trading. IC Markets is ideal if you prioritize the absolute lowest spreads and fastest execution, while Pepperstone offers a great all-around package with additional perks like free VPS for active traders. You can also open demo accounts with both to test their platforms before committing.': 'Ambii brokeri sunt opțiuni excelente pentru trading automatizat. IC Markets este ideal dacă prioritizezi cele mai mici spread-uri absolute și execuția cea mai rapidă, în timp ce Pepperstone oferă un pachet complet excelent cu beneficii suplimentare precum VPS gratuit pentru traderii activi. Poți de asemenea să deschizi conturi demo la ambii pentru a testa platformele înainte de a te angaja.',
+                'Using Other Brokers': 'Folosirea Altor Brokeri',
+                'While we recommend IC Markets and Pepperstone, GTAlgo bots work with any broker that supports MetaTrader 5. Make sure your broker offers good execution speed, competitive spreads, and is properly regulated before opening an account.': 'Deși recomandăm IC Markets și Pepperstone, roboții GTAlgo funcționează cu orice broker care suportă MetaTrader 5. Asigură-te că brokerul tău oferă viteză bună de execuție, spread-uri competitive și este reglementat corespunzător înainte de a deschide un cont.',
                 'Demo Bot Setup': 'Configurare Robot Demo',
                 'What is a Demo Bot?': 'Ce este un Robot Demo?',
                 'Demo bots are free, limited versions that allow you to test the strategy in backtest mode before purchasing the full version.': 'Roboții demo sunt versiuni gratuite, limitate, care îți permit să testezi strategia în modul backtest înainte de a cumpăra versiunea completă.',
@@ -1914,16 +2224,14 @@
                 'Recommended Value': 'Valoare Recomandată',
                 'Description': 'Descriere',
                 'Risk per trade (percentage)': 'Risc per trade (procent)',
-                'Moving average calculation period': 'Perioada de calcul a mediei mobile',
-                'Entry filter threshold': 'Prag filtru de intrare',
-                'Lookback period for percentile': 'Perioadă lookback pentru percentilă',
-                'Auto-close positions at this hour': 'Închide automat pozițiile la această oră',
-                'Limit to one position per day': 'Limitează la o poziție pe zi',
-                'Maximum risk per trade': 'Risc maxim per trade',
-                'Entry filter threshold (%)': 'Prag filtru de intrare (%)',
                 'Maximum acceptable slippage (pips)': 'Slippage maxim acceptabil (pips)',
-                'Auto-close positions at 22:00': 'Închide automat pozițiile la 22:00',
                 '5-minute chart for analysis': 'Grafic de 5 minute pentru analiză',
+                'Maximum risk per trade': 'Risc maxim per trade',
+                'Moving average calculation period': 'Perioadă calcul medie mobilă',
+                'Entry filter threshold (%)': 'Prag filtru de intrare (%)',
+                'Lookback period for percentile': 'Perioadă lookback pentru percentilă',
+                'Auto-close positions at 22:00': 'Închide automat pozițiile la 22:00',
+                'Limit to one position per day': 'Limitează la o poziție pe zi',
                 'Momentum Analysis (CCI, EMA, Linear Regression)': 'Analiză Momentum (CCI, EMA, Regresia Liniară)',
                 '3-hour chart for analysis': 'Grafic de 3 ore pentru analiză',
                 'Risk percentage per trade': 'Procent risc per trade',
@@ -1939,9 +2247,6 @@
                 'Stop loss coefficient': 'Coeficient stop loss',
                 'Trailing stop coefficient': 'Coeficient trailing stop',
                 'Breakout System': 'Sistem Breakout',
-                'Volatility expansion multiplier': 'Multiplicator expansiune volatilitate',
-                'Bars to detect consolidation': 'Bare pentru detectare consolidare',
-                'Enable false signal filtering': 'Activează filtrare semnale false',
                 'Risk Disclaimer': 'Avertisment Risc',
                 'These settings are recommendations based on historical backtesting. Always adjust parameters according to your account balance and risk tolerance. Trading involves substantial risk of loss.': 'Aceste setări sunt recomandări bazate pe backtesting istoric. Ajustează întotdeauna parametrii conform soldului contului și toleranței la risc. Tranzacționarea implică risc substanțial de pierdere.',
                 'Support & Resources': 'Suport & Resurse',
@@ -2041,79 +2346,66 @@
 
         // Vector symbol selector
         function selectVectorSymbol(symbol, btnElement) {
-            // Update button states
             const vectorBtns = document.querySelectorAll('#vector-settings .bot-selector .bot-btn');
             vectorBtns.forEach(btn => btn.classList.remove('active'));
             if (btnElement) {
                 btnElement.classList.add('active');
             }
             
-            // Hide all symbol settings
             document.querySelectorAll('.vector-symbol-settings').forEach(div => {
                 div.style.display = 'none';
             });
             
-            // Show selected symbol settings
             document.getElementById('vector-' + symbol).style.display = 'block';
         }
 
         // Storm symbol selector
         function selectStormSymbol(symbol, btnElement) {
-            // Update button states
             const stormBtns = document.querySelectorAll('#storm-settings .bot-selector .bot-btn');
             stormBtns.forEach(btn => btn.classList.remove('active'));
             if (btnElement) {
                 btnElement.classList.add('active');
             }
             
-            // Hide all symbol settings
             document.querySelectorAll('.storm-symbol-settings').forEach(div => {
                 div.style.display = 'none';
             });
             
-            // Show selected symbol settings
             document.getElementById('storm-' + symbol).style.display = 'block';
         }
 
         // Nova symbol selector
         function selectNovaSymbol(symbol, btnElement) {
-            // Update button states
             const novaBtns = document.querySelectorAll('#nova-settings .bot-selector .bot-btn');
             novaBtns.forEach(btn => btn.classList.remove('active'));
             if (btnElement) {
                 btnElement.classList.add('active');
             }
             
-            // Hide all symbol settings
             document.querySelectorAll('.nova-symbol-settings').forEach(div => {
                 div.style.display = 'none';
             });
             
-            // Show selected symbol settings
             document.getElementById('nova-' + symbol).style.display = 'block';
         }
 
         // Apex symbol selector
         function selectApexSymbol(symbol, btnElement) {
-            // Update button states
             const apexBtns = document.querySelectorAll('#apex-settings .bot-selector .bot-btn');
             apexBtns.forEach(btn => btn.classList.remove('active'));
             if (btnElement) {
                 btnElement.classList.add('active');
             }
             
-            // Hide all symbol settings
             document.querySelectorAll('.apex-symbol-settings').forEach(div => {
                 div.style.display = 'none';
             });
             
-            // Show selected symbol settings
             document.getElementById('apex-' + symbol).style.display = 'block';
         }
 
-        // Mobile touch event handler - runs immediately
+        // Mobile touch event handler
         (function() {
-            // Wait for DOM to be ready
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', initMobileHandlers);
             } else {
@@ -2123,11 +2415,9 @@
             function initMobileHandlers() {
                 console.log('Initializing mobile handlers...');
                 
-                // Add touch handlers to all buttons
                 document.querySelectorAll('button[onclick], .quick-nav-item[onclick]').forEach(function(el) {
                     el.addEventListener('touchstart', function(e) {
                         console.log('Touch detected on:', el);
-                        // Trigger the onclick manually
                         if (el.onclick) {
                             el.onclick.call(el, e);
                         }
