@@ -105,14 +105,8 @@
             -webkit-user-select: none;
         }
 
-        .lang-btn:hover {
-            color: var(--text-primary);
-        }
-
-        .lang-btn:active {
-            transform: scale(0.95);
-        }
-
+        .lang-btn:hover { color: var(--text-primary); }
+        .lang-btn:active { transform: scale(0.95); }
         .lang-btn.active {
             background: var(--text-primary);
             color: #000;
@@ -182,15 +176,8 @@
             box-shadow: 0 10px 30px rgba(0, 113, 227, 0.2);
         }
 
-        .quick-nav-item .icon {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-
-        .quick-nav-item .label {
-            font-size: 14px;
-            font-weight: 600;
-        }
+        .quick-nav-item .icon { font-size: 32px; margin-bottom: 10px; }
+        .quick-nav-item .label { font-size: 14px; font-weight: 600; }
 
         .section {
             background: var(--glass);
@@ -209,9 +196,7 @@
             gap: 12px;
         }
 
-        .section h2 .icon {
-            font-size: 28px;
-        }
+        .section h2 .icon { font-size: 28px; }
 
         .section h3 {
             font-size: 22px;
@@ -237,13 +222,301 @@
             margin-bottom: 20px;
         }
 
-        .section ul li {
-            margin-bottom: 8px;
+        .section ul li { margin-bottom: 8px; }
+
+        /* ===== INTRO SECTION STYLES ===== */
+
+        .intro-lead {
+            font-size: clamp(15px, 2.5vw, 18px);
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 0;
         }
 
-        .steps {
-            counter-reset: step-counter;
+        .intro-lead strong {
+            color: var(--text-primary);
         }
+
+        .analogy-box {
+            background: linear-gradient(135deg, rgba(0, 113, 227, 0.08), rgba(0, 113, 227, 0.03));
+            border: 1px solid rgba(0, 113, 227, 0.3);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 28px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .analogy-box::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 120px;
+            color: rgba(0, 113, 227, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .analogy-box p {
+            color: var(--text-primary);
+            font-size: 16px;
+            line-height: 1.8;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin: 28px 0;
+        }
+
+        .concept-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .concept-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(0, 113, 227, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .concept-card .card-icon {
+            font-size: 36px;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .concept-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            margin-top: 0;
+        }
+
+        .concept-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .vs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 28px 0;
+        }
+
+        .vs-card {
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .vs-card.human {
+            background: rgba(239, 68, 68, 0.06);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+        }
+
+        .vs-card.robot {
+            background: rgba(16, 185, 129, 0.06);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+        }
+
+        .vs-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            margin-top: 0;
+        }
+
+        .vs-card.human h4 { color: #ef4444; }
+        .vs-card.robot h4 { color: var(--green); }
+
+        .vs-card ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .vs-card ul li {
+            font-size: 13px;
+            color: var(--text-secondary);
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .vs-card.human ul li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: #ef4444;
+        }
+
+        .vs-card.robot ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+        }
+
+        .flow-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 28px 0;
+        }
+
+        .flow-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .flow-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 60px;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, rgba(0, 113, 227, 0.4), rgba(0, 113, 227, 0.1));
+        }
+
+        .flow-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, rgba(0, 113, 227, 0.3), rgba(0, 113, 227, 0.1));
+            border: 1px solid rgba(0, 113, 227, 0.4);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .flow-content h4 {
+            font-size: 16px;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            margin-top: 0;
+        }
+
+        .flow-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .myth-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 24px 0;
+        }
+
+        .myth-item {
+            border-radius: 12px;
+            padding: 18px 20px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+
+        .myth-item .myth-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 4px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .myth-item.false {
+            background: rgba(239, 68, 68, 0.06);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .myth-item.false .myth-label {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+
+        .myth-item.true {
+            background: rgba(16, 185, 129, 0.06);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .myth-item.true .myth-label {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--green);
+        }
+
+        .myth-item .myth-text strong {
+            display: block;
+            color: var(--text-primary);
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .myth-item .myth-text span {
+            color: var(--text-secondary);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .cta-next {
+            background: linear-gradient(135deg, rgba(0, 113, 227, 0.15), rgba(0, 113, 227, 0.05));
+            border: 1px solid rgba(0, 113, 227, 0.3);
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        .cta-next p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .cta-next button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .cta-next button:hover {
+            background: #0085f5;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 113, 227, 0.4);
+        }
+
+        /* ===== END INTRO STYLES ===== */
+
+        .steps { counter-reset: step-counter; }
 
         .step {
             position: relative;
@@ -269,16 +542,8 @@
             box-shadow: 0 4px 16px var(--accent-glow);
         }
 
-        .step h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--text-primary);
-        }
-
-        .step p {
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-        }
+        .step h4 { font-size: 18px; margin-bottom: 10px; color: var(--text-primary); }
+        .step p { color: var(--text-secondary); margin-bottom: 10px; }
 
         .code-block {
             background: rgba(0, 0, 0, 0.5);
@@ -292,9 +557,7 @@
             position: relative;
         }
 
-        .code-block code {
-            color: var(--green);
-        }
+        .code-block code { color: var(--green); }
 
         .copy-btn {
             position: absolute;
@@ -310,10 +573,7 @@
             transition: all 0.3s ease;
         }
 
-        .copy-btn:hover {
-            background: var(--glass-hover);
-            color: var(--text-primary);
-        }
+        .copy-btn:hover { background: var(--glass-hover); color: var(--text-primary); }
 
         .warning-box {
             background: rgba(245, 158, 11, 0.1);
@@ -326,10 +586,7 @@
             align-items: start;
         }
 
-        .warning-box .icon {
-            font-size: 24px;
-            flex-shrink: 0;
-        }
+        .warning-box .icon { font-size: 24px; flex-shrink: 0; }
 
         .info-box {
             background: rgba(0, 113, 227, 0.1);
@@ -342,11 +599,7 @@
             align-items: start;
         }
 
-        .info-box .icon {
-            font-size: 24px;
-            flex-shrink: 0;
-            color: var(--accent);
-        }
+        .info-box .icon { font-size: 24px; flex-shrink: 0; color: var(--accent); }
 
         .success-box {
             background: rgba(16, 185, 129, 0.1);
@@ -359,11 +612,7 @@
             align-items: start;
         }
 
-        .success-box .icon {
-            font-size: 24px;
-            flex-shrink: 0;
-            color: var(--green);
-        }
+        .success-box .icon { font-size: 24px; flex-shrink: 0; color: var(--green); }
 
         .settings-table {
             width: 100%;
@@ -371,8 +620,7 @@
             border-collapse: collapse;
         }
 
-        .settings-table th,
-        .settings-table td {
+        .settings-table th, .settings-table td {
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid var(--border);
@@ -384,9 +632,7 @@
             color: var(--accent);
         }
 
-        .settings-table td {
-            color: var(--text-secondary);
-        }
+        .settings-table td { color: var(--text-secondary); }
 
         .settings-table code {
             background: rgba(0, 0, 0, 0.5);
@@ -423,54 +669,15 @@
         }
 
         @media (min-width: 768px) {
-            .bot-btn {
-                padding: 15px;
-                min-height: auto;
-            }
+            .bot-btn { padding: 15px; min-height: auto; }
         }
 
-        .bot-btn:hover {
-            background: var(--glass-hover);
-            border-color: var(--accent);
-        }
+        .bot-btn:hover { background: var(--glass-hover); border-color: var(--accent); }
+        .bot-btn:active { background: rgba(0, 113, 227, 0.3); border-color: var(--accent); transform: scale(0.98); }
+        .bot-btn.active { background: rgba(0, 113, 227, 0.2); border-color: var(--accent); color: var(--accent); }
 
-        .bot-btn:active {
-            background: rgba(0, 113, 227, 0.3);
-            border-color: var(--accent);
-            transform: scale(0.98);
-        }
-
-        .bot-btn.active {
-            background: rgba(0, 113, 227, 0.2);
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .bot-settings {
-            display: none;
-        }
-
-        .bot-settings.active {
-            display: block;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 16px;
-            margin: 20px 0;
-            border: 1px solid var(--border);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+        .bot-settings { display: none; }
+        .bot-settings.active { display: block; }
 
         footer {
             text-align: center;
@@ -482,24 +689,14 @@
         }
 
         @media (max-width: 768px) {
-            nav {
-                padding: 0 20px;
-            }
-            .container {
-                margin-top: 80px;
-            }
-            .section {
-                padding: 25px;
-            }
-            .step {
-                padding-left: 50px;
-            }
-            .settings-table {
-                font-size: 13px;
-            }
-            .bot-selector {
-                grid-template-columns: 1fr 1fr;
-            }
+            nav { padding: 0 20px; }
+            .container { margin-top: 80px; }
+            .section { padding: 25px; }
+            .step { padding-left: 50px; }
+            .settings-table { font-size: 13px; }
+            .bot-selector { grid-template-columns: 1fr 1fr; }
+            .vs-grid { grid-template-columns: 1fr; }
+            .concept-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -521,6 +718,10 @@
         </div>
 
         <div class="quick-nav">
+            <div class="quick-nav-item" onclick="scrollToSection('intro')">
+                <div class="icon">🤖</div>
+                <div class="label translatable">What Are Trading Bots?</div>
+            </div>
             <div class="quick-nav-item" onclick="scrollToSection('installation')">
                 <div class="icon">📦</div>
                 <div class="label translatable">Installation</div>
@@ -546,6 +747,235 @@
                 <div class="label translatable">Settings</div>
             </div>
         </div>
+
+        <!-- ===== INTRO: WHAT ARE TRADING BOTS ===== -->
+        <div class="section" id="intro">
+            <h2><span class="icon">🤖</span><span class="translatable">What Are Trading Bots? A Beginner's Guide</span></h2>
+
+            <p class="intro-lead translatable">
+                If you've never traded before and have no idea what a "trading bot" is — <strong>this section is for you.</strong> We'll explain everything from scratch, simply and clearly, before moving on to the technical setup.
+            </p>
+
+            <!-- What is trading -->
+            <h3 class="translatable">First: What is Trading?</h3>
+
+            <p class="translatable">
+                Trading means <strong>buying and selling financial assets</strong> — like stocks, gold, currencies, or indices (like the S&P 500) — with the goal of making a profit. The idea is simple: buy when the price is low, sell when the price is high.
+            </p>
+
+            <div class="analogy-box">
+                <p class="translatable">
+                    <strong>Simple analogy:</strong> Imagine you buy 10 kg of apples at the market for €1/kg. The next day, apples become scarce and the price rises to €1.50/kg. You sell them and make €5 profit. That's exactly what trading is — but with financial assets instead of apples, and the transactions happen in seconds, 24/7.
+                </p>
+            </div>
+
+            <p class="translatable">
+                Financial markets move constantly — prices go up and down every second. Professional traders sit in front of screens all day trying to predict these movements. But there's a problem: <strong>humans get tired, emotional, and make mistakes.</strong>
+            </p>
+
+            <!-- What is a trading bot -->
+            <h3 class="translatable">So, What is a Trading Bot?</h3>
+
+            <p class="translatable">
+                A trading bot (also called an EA — Expert Advisor) is a <strong>computer program that trades automatically on your behalf.</strong> It analyzes the market, makes decisions, and executes buy/sell orders — all without you needing to do anything.
+            </p>
+
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <span class="card-icon">👁️</span>
+                    <h4 class="translatable">It Watches</h4>
+                    <p class="translatable">The bot analyzes price charts 24/7, looking for specific patterns or signals that indicate a good trading opportunity.</p>
+                </div>
+                <div class="concept-card">
+                    <span class="card-icon">🧠</span>
+                    <h4 class="translatable">It Thinks</h4>
+                    <p class="translatable">Based on a pre-programmed strategy (a set of rules), the bot decides: "now is a good time to buy" or "now is a good time to sell".</p>
+                </div>
+                <div class="concept-card">
+                    <span class="card-icon">⚡</span>
+                    <h4 class="translatable">It Acts</h4>
+                    <p class="translatable">In milliseconds, the bot executes the trade through your broker account — faster than any human could.</p>
+                </div>
+                <div class="concept-card">
+                    <span class="card-icon">🛡️</span>
+                    <h4 class="translatable">It Protects</h4>
+                    <p class="translatable">The bot also manages risk automatically — setting stop losses so you don't lose more than a predefined amount on any trade.</p>
+                </div>
+            </div>
+
+            <!-- How it works step by step -->
+            <h3 class="translatable">How Does a Trading Bot Work? Step by Step</h3>
+
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="flow-icon">📈</div>
+                    <div class="flow-content">
+                        <h4 class="translatable">1. Market Analysis</h4>
+                        <p class="translatable">The bot continuously reads price data — every candle, every movement. It uses mathematical indicators (like RSI, EMA, CCI) to understand the current state of the market.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-icon">🎯</div>
+                    <div class="flow-content">
+                        <h4 class="translatable">2. Signal Detection</h4>
+                        <p class="translatable">When the market conditions match the bot's strategy rules (e.g. "price is below the 50-period average AND RSI is under 30"), the bot generates a signal: "buy now".</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-icon">💼</div>
+                    <div class="flow-content">
+                        <h4 class="translatable">3. Order Execution</h4>
+                        <p class="translatable">The bot instantly sends the order to your broker. It specifies the asset, quantity, direction (buy/sell), stop loss (maximum loss), and take profit (target profit).</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-icon">⏱️</div>
+                    <div class="flow-content">
+                        <h4 class="translatable">4. Position Management</h4>
+                        <p class="translatable">While the trade is open, the bot monitors it continuously. It can move the stop loss to protect profit (trailing stop) or exit early if market conditions change.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-icon">✅</div>
+                    <div class="flow-content">
+                        <h4 class="translatable">5. Closing the Trade</h4>
+                        <p class="translatable">The trade closes automatically when either the profit target is reached, the stop loss is hit, or the bot's exit conditions are met. Profit (or loss) is immediately reflected in your account.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bot vs Human -->
+            <h3 class="translatable">Trading Bot vs Human Trader</h3>
+
+            <p class="translatable">Here's why many traders choose to automate their strategies:</p>
+
+            <div class="vs-grid">
+                <div class="vs-card human">
+                    <h4 class="translatable">❌ Human Trader</h4>
+                    <ul>
+                        <li class="translatable">Gets tired, distracted, needs sleep</li>
+                        <li class="translatable">Makes emotional decisions (fear & greed)</li>
+                        <li class="translatable">Can only watch a few charts at once</li>
+                        <li class="translatable">Slow to react — misses entries</li>
+                        <li class="translatable">Inconsistent — same setup, different decision</li>
+                        <li class="translatable">Panics during market volatility</li>
+                    </ul>
+                </div>
+                <div class="vs-card robot">
+                    <h4 class="translatable">✅ Trading Bot</h4>
+                    <ul>
+                        <li class="translatable">Runs 24/7 without rest</li>
+                        <li class="translatable">Zero emotions — follows rules 100%</li>
+                        <li class="translatable">Monitors multiple markets simultaneously</li>
+                        <li class="translatable">Executes in milliseconds</li>
+                        <li class="translatable">Perfectly consistent — same rules, always</li>
+                        <li class="translatable">Unaffected by market news or volatility</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- What is MetaTrader 5 -->
+            <h3 class="translatable">What is MetaTrader 5 (MT5)?</h3>
+
+            <p class="translatable">
+                MetaTrader 5 is the <strong>platform (software) where trading bots run.</strong> Think of it as the "operating system" for your bot. It connects to your broker, displays the charts, and gives the bot the tools it needs to analyze the market and execute trades.
+            </p>
+
+            <div class="info-box">
+                <div class="icon">💡</div>
+                <div>
+                    <p class="translatable"><strong>Simple analogy:</strong> If your trading bot is an app, then MetaTrader 5 is the smartphone it runs on. Without MT5, the bot has no way to connect to the market, see prices, or place orders. That's why we need to install and configure MT5 as the first step.</p>
+                </div>
+            </div>
+
+            <!-- What is a broker -->
+            <h3 class="translatable">What is a Broker?</h3>
+
+            <p class="translatable">
+                A broker is a <strong>licensed company that acts as an intermediary between you and the financial markets.</strong> When your bot decides to buy gold, it's the broker who actually executes that order in the real market. The broker holds your money and processes all transactions.
+            </p>
+
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <span class="card-icon">🏦</span>
+                    <h4 class="translatable">The Broker's Role</h4>
+                    <p class="translatable">Holds your deposited funds, executes your trades, and provides access to financial markets. Regulated by financial authorities for your protection.</p>
+                </div>
+                <div class="concept-card">
+                    <span class="card-icon">💰</span>
+                    <h4 class="translatable">How Brokers Earn</h4>
+                    <p class="translatable">Brokers earn through the "spread" (difference between buy and sell price) or small commissions per trade. This is how they provide their services.</p>
+                </div>
+                <div class="concept-card">
+                    <span class="card-icon">📋</span>
+                    <h4 class="translatable">Demo Account</h4>
+                    <p class="translatable">Brokers offer free demo accounts with virtual money so you can test everything without risking real funds. Perfect for beginners.</p>
+                </div>
+            </div>
+
+            <!-- Myths -->
+            <h3 class="translatable">Common Myths About Trading Bots</h3>
+
+            <div class="myth-grid">
+                <div class="myth-item false">
+                    <div class="myth-label translatable">MYTH</div>
+                    <div class="myth-text">
+                        <strong class="translatable">"Trading bots always make money"</strong>
+                        <span class="translatable">No bot has a 100% win rate. Trading involves risk, and even the best strategies can lose trades. The goal is to be profitable over time, not on every single trade.</span>
+                    </div>
+                </div>
+                <div class="myth-item false">
+                    <div class="myth-label translatable">MYTH</div>
+                    <div class="myth-text">
+                        <strong class="translatable">"You need to be a tech expert to use a bot"</strong>
+                        <span class="translatable">Not at all. GTAlgo bots are designed to be installed and configured by anyone, even with zero technical background. This guide walks you through every step.</span>
+                    </div>
+                </div>
+                <div class="myth-item false">
+                    <div class="myth-label translatable">MYTH</div>
+                    <div class="myth-text">
+                        <strong class="translatable">"Trading bots are illegal or prohibited"</strong>
+                        <span class="translatable">Automated trading is completely legal and widely used by professional traders and institutions. MetaTrader 5 was built specifically to support trading bots (Expert Advisors).</span>
+                    </div>
+                </div>
+                <div class="myth-item true">
+                    <div class="myth-label translatable">REALITY</div>
+                    <div class="myth-text">
+                        <strong class="translatable">"Bots require minimal time after initial setup"</strong>
+                        <span class="translatable">Once configured, a trading bot runs independently. You don't need to watch the screen all day. Occasional monitoring (a few minutes per day) is recommended to ensure everything is working correctly.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What happens with your money -->
+            <h3 class="translatable">What Happens to Your Money?</h3>
+
+            <p class="translatable">
+                Your money is always in <strong>your own broker account</strong> — GTAlgo never has access to your funds. The bot only has permission to place trades on your behalf through MetaTrader 5. You can withdraw your money at any time, directly from your broker.
+            </p>
+
+            <div class="success-box">
+                <div class="icon">🔒</div>
+                <div>
+                    <strong class="translatable">Your funds are always under your control</strong>
+                    <p class="translatable">GTAlgo bots connect to your MT5 account and place trades, but they cannot withdraw money or transfer funds. Your capital stays in your regulated broker account at all times.</p>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <div class="icon">⚠️</div>
+                <div>
+                    <strong class="translatable">Important Risk Warning</strong>
+                    <p class="translatable">Trading financial markets carries significant risk of loss. Only invest money you can afford to lose. Past performance of a trading bot does not guarantee future results. Start with a demo account to understand how the bot works before using real funds.</p>
+                </div>
+            </div>
+
+            <div class="cta-next">
+                <p class="translatable">Now that you understand the basics, let's set everything up. The next step is installing MetaTrader 5 and your GTAlgo bot.</p>
+                <button onclick="scrollToSection('installation')" class="translatable">Start Installation →</button>
+            </div>
+        </div>
+        <!-- ===== END INTRO ===== -->
 
         <!-- INSTALLATION -->
         <div class="section" id="installation">
@@ -693,22 +1123,18 @@
                     <h4 class="translatable">Purchase VPS Plan</h4>
                     <p class="translatable">Choose a plan that suits your needs (minimum 2GB RAM recommended for MT5).</p>
                 </div>
-
                 <div class="step">
                     <h4 class="translatable">Connect to Your VPS</h4>
                     <p class="translatable">Use Remote Desktop Connection (Windows) or a similar tool to access your VPS. Your VPS provider will send you connection details via email.</p>
                 </div>
-
                 <div class="step">
                     <h4 class="translatable">Install MT5 on VPS</h4>
                     <p class="translatable">Download and install MetaTrader 5 on your VPS just like you would on your personal computer.</p>
                 </div>
-
                 <div class="step">
                     <h4 class="translatable">Install Your Bot</h4>
                     <p class="translatable">Follow the same installation steps from above to install your GTAlgo bot on the VPS.</p>
                 </div>
-
                 <div class="step">
                     <h4 class="translatable">Run 24/7</h4>
                     <p class="translatable">Once configured, you can disconnect from the VPS and your bot will continue running independently. You can reconnect anytime to check on performance.</p>
@@ -728,14 +1154,12 @@
             <h4 class="translatable">Recommended Brokers for GTAlgo</h4>
             <p class="translatable">We recommend these two brokers for their excellent reliability, competitive spreads, fast execution, and MT5 support:</p>
 
-            <!-- IC Markets -->
             <div class="code-block" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05)); border: 1px solid var(--green); margin-top: 20px;">
                 <div style="padding: 10px 0;">
                     <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 20px;">
                         <div style="flex: 1; min-width: 250px;">
                             <strong style="color: var(--green); font-size: 18px;">IC Markets</strong>
                             <p style="color: var(--text-secondary); margin: 10px 0 15px 0; line-height: 1.6;" class="translatable">One of the world's largest forex brokers, known for ultra-tight spreads and lightning-fast execution. Perfect for algorithmic trading with deep liquidity and institutional-grade infrastructure.</p>
-                            
                             <div style="margin-top: 15px;">
                                 <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 8px;" class="translatable">Key Features:</p>
                                 <ul style="margin-left: 20px; color: var(--text-secondary); line-height: 1.8;">
@@ -754,14 +1178,12 @@
                 </div>
             </div>
 
-            <!-- Pepperstone -->
             <div class="code-block" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05)); border: 1px solid var(--green); margin-top: 20px;">
                 <div style="padding: 10px 0;">
                     <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 20px;">
                         <div style="flex: 1; min-width: 250px;">
                             <strong style="color: var(--green); font-size: 18px;">Pepperstone</strong>
                             <p style="color: var(--text-secondary); margin: 10px 0 15px 0; line-height: 1.6;" class="translatable">Award-winning broker with a strong reputation for transparency and reliability. Offers excellent trading conditions with competitive pricing and top-tier regulation across multiple jurisdictions.</p>
-                            
                             <div style="margin-top: 15px;">
                                 <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 8px;" class="translatable">Key Features:</p>
                                 <ul style="margin-left: 20px; color: var(--text-secondary); line-height: 1.8;">
@@ -815,12 +1237,10 @@
                     <h4 class="translatable">Download Demo Version</h4>
                     <p class="translatable">Visit the GTAlgo store and download the demo version of your chosen bot.</p>
                 </div>
-
                 <div class="step">
                     <h4 class="translatable">Install in MT5</h4>
                     <p class="translatable">Follow the same installation steps as above (File → Open Data Folder → MQL5 → Experts).</p>
                 </div>
-
                 <div class="step">
                     <h4 class="translatable">Use in Strategy Tester</h4>
                     <p class="translatable">Demo versions can ONLY be used in the Strategy Tester (backtest mode). Press Ctrl+R to open the Strategy Tester and test the bot's performance on historical data.</p>
@@ -854,7 +1274,6 @@
                     <h4 class="translatable">Open MT5 Options</h4>
                     <p class="translatable">Go to: <strong>Tools → Options → Expert Advisors</strong></p>
                 </div>
-
                 <div class="step">
                     <h4 class="translatable">Add License URL</h4>
                     <p class="translatable">Check the box: <strong>"Allow WebRequest for listed URL"</strong></p>
@@ -864,7 +1283,6 @@
                         <button class="copy-btn translatable" onclick="copyToClipboard('https://ea-license-backend.gtalgo500.workers.dev', event)">Copy</button>
                     </div>
                 </div>
-
                 <div class="step">
                     <h4 class="translatable">Save and Restart</h4>
                     <p class="translatable">Click OK and restart MetaTrader 5.</p>
@@ -877,7 +1295,6 @@
                     <h4 class="translatable">Drag EA to Chart</h4>
                     <p class="translatable">Drag your licensed bot from Navigator to the chart.</p>
                 </div>
-
                 <div class="step">
                     <h4 class="translatable">Enter License Credentials</h4>
                     <p class="translatable">In the EA settings window, find the "LICENSE SETTINGS" section and enter:</p>
@@ -886,12 +1303,10 @@
                         <li><strong>License Key:</strong> <span class="translatable">Your unique license key (received via email)</span></li>
                     </ul>
                 </div>
-
                 <div class="step">
                     <h4 class="translatable">Enable AutoTrading</h4>
                     <p class="translatable">Make sure "Allow Algo Trading" is checked, then click OK.</p>
                 </div>
-
                 <div class="step">
                     <h4 class="translatable">Verify License</h4>
                     <p class="translatable">Check the "Experts" tab in MT5. You should see a success message confirming license validation.</p>
@@ -939,7 +1354,6 @@
                     <h4 class="translatable">Open Strategy Tester</h4>
                     <p class="translatable">Press <strong>Ctrl+R</strong> or go to <strong>View → Strategy Tester</strong></p>
                 </div>
-
                 <div class="step">
                     <h4 class="translatable">Configure Test Settings</h4>
                     <p class="translatable">In the Strategy Tester panel:</p>
@@ -951,17 +1365,14 @@
                         <li><strong class="translatable">Model:</strong> <span class="translatable">Select "Every tick" for most accurate results</span></li>
                     </ul>
                 </div>
-
                 <div class="step">
                     <h4 class="translatable">Adjust EA Parameters</h4>
                     <p class="translatable">Click "Expert properties" to customize settings like lot size, risk percentage, etc. (see bot-specific settings below).</p>
                 </div>
-
                 <div class="step">
                     <h4 class="translatable">Start the Test</h4>
                     <p class="translatable">Click the "Start" button and wait for the backtest to complete.</p>
                 </div>
-
                 <div class="step">
                     <h4 class="translatable">Analyze Results</h4>
                     <p class="translatable">Review the Results, Graph, and Report tabs to evaluate performance metrics like win rate, profit factor, drawdown, etc.</p>
@@ -999,7 +1410,6 @@
             <!-- GT NOVA PRO -->
             <div class="bot-settings active" id="nova-settings">
                 <h3>GT Nova Pro - <span class="translatable">Recommended Settings</span></h3>
-                
                 <div class="info-box">
                     <div class="icon">📈</div>
                     <div>
@@ -1008,88 +1418,31 @@
                         <strong class="translatable">Recommended Balance:</strong> $1,000+
                     </div>
                 </div>
-
                 <div class="bot-selector">
                     <button class="bot-btn active" onclick="selectNovaSymbol('us500', this)">US500 (D1)</button>
                     <button class="bot-btn" onclick="selectNovaSymbol('us30', this)">US30 (H12)</button>
                 </div>
-
-                <!-- US500 D1 Settings -->
                 <div class="nova-symbol-settings" id="nova-us500" style="display: block;">
                     <table class="settings-table">
-                        <thead>
-                            <tr>
-                                <th class="translatable">Parameter</th>
-                                <th class="translatable">Recommended Value</th>
-                                <th class="translatable">Description</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th class="translatable">Parameter</th><th class="translatable">Recommended Value</th><th class="translatable">Description</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>RSI Period</td>
-                                <td><code>2</code></td>
-                                <td>RSI calculation period</td>
-                            </tr>
-                            <tr>
-                                <td>SMA Period</td>
-                                <td><code>50</code></td>
-                                <td>Simple moving average period</td>
-                            </tr>
-                            <tr>
-                                <td>EMA Period</td>
-                                <td><code>5</code></td>
-                                <td>Exponential moving average period</td>
-                            </tr>
-                            <tr>
-                                <td>Stop Loss %</td>
-                                <td><code>5.0</code></td>
-                                <td class="translatable">Risk per trade (percentage)</td>
-                            </tr>
-                            <tr>
-                                <td>Max Slippage Points</td>
-                                <td><code>50</code></td>
-                                <td class="translatable">Maximum acceptable slippage (pips)</td>
-                            </tr>
+                            <tr><td>RSI Period</td><td><code>2</code></td><td>RSI calculation period</td></tr>
+                            <tr><td>SMA Period</td><td><code>50</code></td><td>Simple moving average period</td></tr>
+                            <tr><td>EMA Period</td><td><code>5</code></td><td>Exponential moving average period</td></tr>
+                            <tr><td>Stop Loss %</td><td><code>5.0</code></td><td class="translatable">Risk per trade (percentage)</td></tr>
+                            <tr><td>Max Slippage Points</td><td><code>50</code></td><td class="translatable">Maximum acceptable slippage (pips)</td></tr>
                         </tbody>
                     </table>
                 </div>
-
-                <!-- US30 H12 Settings -->
                 <div class="nova-symbol-settings" id="nova-us30" style="display: none;">
                     <table class="settings-table">
-                        <thead>
-                            <tr>
-                                <th class="translatable">Parameter</th>
-                                <th class="translatable">Recommended Value</th>
-                                <th class="translatable">Description</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th class="translatable">Parameter</th><th class="translatable">Recommended Value</th><th class="translatable">Description</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>RSI Period</td>
-                                <td><code>2</code></td>
-                                <td>RSI calculation period</td>
-                            </tr>
-                            <tr>
-                                <td>SMA Period</td>
-                                <td><code>115</code></td>
-                                <td>Simple moving average period</td>
-                            </tr>
-                            <tr>
-                                <td>EMA Period</td>
-                                <td><code>2</code></td>
-                                <td>Exponential moving average period</td>
-                            </tr>
-                            <tr>
-                                <td>Stop Loss %</td>
-                                <td><code>13.0</code></td>
-                                <td class="translatable">Risk per trade (percentage)</td>
-                            </tr>
-                            <tr>
-                                <td>Max Slippage Points</td>
-                                <td><code>50</code></td>
-                                <td class="translatable">Maximum acceptable slippage (pips)</td>
-                            </tr>
+                            <tr><td>RSI Period</td><td><code>2</code></td><td>RSI calculation period</td></tr>
+                            <tr><td>SMA Period</td><td><code>115</code></td><td>Simple moving average period</td></tr>
+                            <tr><td>EMA Period</td><td><code>2</code></td><td>Exponential moving average period</td></tr>
+                            <tr><td>Stop Loss %</td><td><code>13.0</code></td><td class="translatable">Risk per trade (percentage)</td></tr>
+                            <tr><td>Max Slippage Points</td><td><code>50</code></td><td class="translatable">Maximum acceptable slippage (pips)</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -1098,7 +1451,6 @@
             <!-- GT TITAN X -->
             <div class="bot-settings" id="titan-settings">
                 <h3>GT Titan X - <span class="translatable">Recommended Settings</span></h3>
-                
                 <div class="info-box">
                     <div class="icon">📈</div>
                     <div>
@@ -1107,56 +1459,17 @@
                         <strong class="translatable">Recommended Balance:</strong> $2,000+
                     </div>
                 </div>
-
                 <table class="settings-table">
-                    <thead>
-                        <tr>
-                            <th class="translatable">Parameter</th>
-                            <th class="translatable">Recommended Value</th>
-                            <th class="translatable">Description</th>
-                        </tr>
-                    </thead>
+                    <thead><tr><th class="translatable">Parameter</th><th class="translatable">Recommended Value</th><th class="translatable">Description</th></tr></thead>
                     <tbody>
-                        <tr>
-                            <td>Timeframe</td>
-                            <td><code>M5</code></td>
-                            <td class="translatable">5-minute chart for analysis</td>
-                        </tr>
-                        <tr>
-                            <td>Stop Loss %</td>
-                            <td><code>8</code></td>
-                            <td class="translatable">Maximum risk per trade</td>
-                        </tr>
-                        <tr>
-                            <td>MA Period</td>
-                            <td><code>50</code></td>
-                            <td class="translatable">Moving average calculation period</td>
-                        </tr>
-                        <tr>
-                            <td>Percentile Level</td>
-                            <td><code>10</code></td>
-                            <td class="translatable">Entry filter threshold (%)</td>
-                        </tr>
-                        <tr>
-                            <td>Percentile Bars</td>
-                            <td><code>900</code></td>
-                            <td class="translatable">Lookback period for percentile</td>
-                        </tr>
-                        <tr>
-                            <td>Max Slippage</td>
-                            <td><code>50</code></td>
-                            <td class="translatable">Maximum acceptable slippage (pips)</td>
-                        </tr>
-                        <tr>
-                            <td>Close Hour</td>
-                            <td><code>22</code></td>
-                            <td class="translatable">Auto-close positions at 22:00</td>
-                        </tr>
-                        <tr>
-                            <td>One Trade Per Day</td>
-                            <td><code>true</code></td>
-                            <td class="translatable">Limit to one position per day</td>
-                        </tr>
+                        <tr><td>Timeframe</td><td><code>M5</code></td><td class="translatable">5-minute chart for analysis</td></tr>
+                        <tr><td>Stop Loss %</td><td><code>8</code></td><td class="translatable">Maximum risk per trade</td></tr>
+                        <tr><td>MA Period</td><td><code>50</code></td><td class="translatable">Moving average calculation period</td></tr>
+                        <tr><td>Percentile Level</td><td><code>10</code></td><td class="translatable">Entry filter threshold (%)</td></tr>
+                        <tr><td>Percentile Bars</td><td><code>900</code></td><td class="translatable">Lookback period for percentile</td></tr>
+                        <tr><td>Max Slippage</td><td><code>50</code></td><td class="translatable">Maximum acceptable slippage (pips)</td></tr>
+                        <tr><td>Close Hour</td><td><code>22</code></td><td class="translatable">Auto-close positions at 22:00</td></tr>
+                        <tr><td>One Trade Per Day</td><td><code>true</code></td><td class="translatable">Limit to one position per day</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -1164,7 +1477,6 @@
             <!-- GT VECTOR PRO -->
             <div class="bot-settings" id="vector-settings">
                 <h3>GT Vector Pro - <span class="translatable">Recommended Settings</span></h3>
-                
                 <div class="info-box">
                     <div class="icon">📈</div>
                     <div>
@@ -1173,221 +1485,73 @@
                         <strong class="translatable">Recommended Balance:</strong> $1,500+
                     </div>
                 </div>
-
                 <div class="warning-box">
                     <div class="icon">💡</div>
-                    <div>
-                        <strong>Important:</strong> Vector Pro has specific optimized parameters for each symbol. Select your symbol below:
-                    </div>
+                    <div><strong>Important:</strong> Vector Pro has specific optimized parameters for each symbol. Select your symbol below:</div>
                 </div>
-
                 <div class="bot-selector" style="margin-top: 20px;">
                     <button class="bot-btn active" onclick="selectVectorSymbol('xau', this)">XAU (Gold)</button>
                     <button class="bot-btn" onclick="selectVectorSymbol('btc', this)">BTC</button>
                     <button class="bot-btn" onclick="selectVectorSymbol('nas100', this)">NAS100</button>
                     <button class="bot-btn" onclick="selectVectorSymbol('usdjpy', this)">USDJPY</button>
                 </div>
-
-                <!-- XAU Settings -->
                 <div id="vector-xau" class="vector-symbol-settings" style="display: block;">
                     <h4 style="margin-top: 20px; color: var(--accent);">XAU (Gold) - H3</h4>
                     <table class="settings-table">
-                        <thead>
-                            <tr>
-                                <th class="translatable">Parameter</th>
-                                <th class="translatable">Recommended Value</th>
-                                <th class="translatable">Description</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th class="translatable">Parameter</th><th class="translatable">Recommended Value</th><th class="translatable">Description</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>Timeframe</td>
-                                <td><code>H3</code></td>
-                                <td class="translatable">3-hour chart for analysis</td>
-                            </tr>
-                            <tr>
-                                <td>Stop Loss %</td>
-                                <td><code>3.0</code></td>
-                                <td class="translatable">Risk percentage per trade</td>
-                            </tr>
-                            <tr>
-                                <td>CCI Period</td>
-                                <td><code>12</code></td>
-                                <td class="translatable">Commodity Channel Index period</td>
-                            </tr>
-                            <tr>
-                                <td>EMA Period</td>
-                                <td><code>150</code></td>
-                                <td class="translatable">Exponential moving average period</td>
-                            </tr>
-                            <tr>
-                                <td>LinReg Period</td>
-                                <td><code>86</code></td>
-                                <td class="translatable">Linear Regression period</td>
-                            </tr>
-                            <tr>
-                                <td>Exit After Bars (Long)</td>
-                                <td><code>10</code></td>
-                                <td class="translatable">Exit long positions after X bars</td>
-                            </tr>
-                            <tr>
-                                <td>Exit After Bars (Short)</td>
-                                <td><code>13</code></td>
-                                <td class="translatable">Exit short positions after X bars</td>
-                            </tr>
+                            <tr><td>Timeframe</td><td><code>H3</code></td><td class="translatable">3-hour chart for analysis</td></tr>
+                            <tr><td>Stop Loss %</td><td><code>3.0</code></td><td class="translatable">Risk percentage per trade</td></tr>
+                            <tr><td>CCI Period</td><td><code>12</code></td><td class="translatable">Commodity Channel Index period</td></tr>
+                            <tr><td>EMA Period</td><td><code>150</code></td><td class="translatable">Exponential moving average period</td></tr>
+                            <tr><td>LinReg Period</td><td><code>86</code></td><td class="translatable">Linear Regression period</td></tr>
+                            <tr><td>Exit After Bars (Long)</td><td><code>10</code></td><td class="translatable">Exit long positions after X bars</td></tr>
+                            <tr><td>Exit After Bars (Short)</td><td><code>13</code></td><td class="translatable">Exit short positions after X bars</td></tr>
                         </tbody>
                     </table>
                 </div>
-
-                <!-- BTC Settings -->
                 <div id="vector-btc" class="vector-symbol-settings" style="display: none;">
                     <h4 style="margin-top: 20px; color: var(--accent);">BTC - H3</h4>
                     <table class="settings-table">
-                        <thead>
-                            <tr>
-                                <th class="translatable">Parameter</th>
-                                <th class="translatable">Recommended Value</th>
-                                <th class="translatable">Description</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th class="translatable">Parameter</th><th class="translatable">Recommended Value</th><th class="translatable">Description</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>Timeframe</td>
-                                <td><code>H3</code></td>
-                                <td class="translatable">3-hour chart for analysis</td>
-                            </tr>
-                            <tr>
-                                <td>Stop Loss %</td>
-                                <td><code>1.5</code></td>
-                                <td class="translatable">Risk percentage per trade</td>
-                            </tr>
-                            <tr>
-                                <td>CCI Period</td>
-                                <td><code>16</code></td>
-                                <td class="translatable">Commodity Channel Index period</td>
-                            </tr>
-                            <tr>
-                                <td>EMA Period</td>
-                                <td><code>250</code></td>
-                                <td class="translatable">Exponential moving average period</td>
-                            </tr>
-                            <tr>
-                                <td>LinReg Period</td>
-                                <td><code>76</code></td>
-                                <td class="translatable">Linear Regression period</td>
-                            </tr>
-                            <tr>
-                                <td>Exit After Bars (Long)</td>
-                                <td><code>17</code></td>
-                                <td class="translatable">Exit long positions after X bars</td>
-                            </tr>
-                            <tr>
-                                <td>Exit After Bars (Short)</td>
-                                <td><code>5</code></td>
-                                <td class="translatable">Exit short positions after X bars</td>
-                            </tr>
+                            <tr><td>Timeframe</td><td><code>H3</code></td><td class="translatable">3-hour chart for analysis</td></tr>
+                            <tr><td>Stop Loss %</td><td><code>1.5</code></td><td class="translatable">Risk percentage per trade</td></tr>
+                            <tr><td>CCI Period</td><td><code>16</code></td><td class="translatable">Commodity Channel Index period</td></tr>
+                            <tr><td>EMA Period</td><td><code>250</code></td><td class="translatable">Exponential moving average period</td></tr>
+                            <tr><td>LinReg Period</td><td><code>76</code></td><td class="translatable">Linear Regression period</td></tr>
+                            <tr><td>Exit After Bars (Long)</td><td><code>17</code></td><td class="translatable">Exit long positions after X bars</td></tr>
+                            <tr><td>Exit After Bars (Short)</td><td><code>5</code></td><td class="translatable">Exit short positions after X bars</td></tr>
                         </tbody>
                     </table>
                 </div>
-
-                <!-- NAS100 Settings -->
                 <div id="vector-nas100" class="vector-symbol-settings" style="display: none;">
                     <h4 style="margin-top: 20px; color: var(--accent);">NAS100 - H3</h4>
                     <table class="settings-table">
-                        <thead>
-                            <tr>
-                                <th class="translatable">Parameter</th>
-                                <th class="translatable">Recommended Value</th>
-                                <th class="translatable">Description</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th class="translatable">Parameter</th><th class="translatable">Recommended Value</th><th class="translatable">Description</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>Timeframe</td>
-                                <td><code>H3</code></td>
-                                <td class="translatable">3-hour chart for analysis</td>
-                            </tr>
-                            <tr>
-                                <td>Stop Loss %</td>
-                                <td><code>2.0</code></td>
-                                <td class="translatable">Risk percentage per trade</td>
-                            </tr>
-                            <tr>
-                                <td>CCI Period</td>
-                                <td><code>4</code></td>
-                                <td class="translatable">Commodity Channel Index period</td>
-                            </tr>
-                            <tr>
-                                <td>EMA Period</td>
-                                <td><code>275</code></td>
-                                <td class="translatable">Exponential moving average period</td>
-                            </tr>
-                            <tr>
-                                <td>LinReg Period</td>
-                                <td><code>96</code></td>
-                                <td class="translatable">Linear Regression period</td>
-                            </tr>
-                            <tr>
-                                <td>Exit After Bars (Long)</td>
-                                <td><code>3</code></td>
-                                <td class="translatable">Exit long positions after X bars</td>
-                            </tr>
-                            <tr>
-                                <td>Exit After Bars (Short)</td>
-                                <td><code>15</code></td>
-                                <td class="translatable">Exit short positions after X bars</td>
-                            </tr>
+                            <tr><td>Timeframe</td><td><code>H3</code></td><td class="translatable">3-hour chart for analysis</td></tr>
+                            <tr><td>Stop Loss %</td><td><code>2.0</code></td><td class="translatable">Risk percentage per trade</td></tr>
+                            <tr><td>CCI Period</td><td><code>4</code></td><td class="translatable">Commodity Channel Index period</td></tr>
+                            <tr><td>EMA Period</td><td><code>275</code></td><td class="translatable">Exponential moving average period</td></tr>
+                            <tr><td>LinReg Period</td><td><code>96</code></td><td class="translatable">Linear Regression period</td></tr>
+                            <tr><td>Exit After Bars (Long)</td><td><code>3</code></td><td class="translatable">Exit long positions after X bars</td></tr>
+                            <tr><td>Exit After Bars (Short)</td><td><code>15</code></td><td class="translatable">Exit short positions after X bars</td></tr>
                         </tbody>
                     </table>
                 </div>
-
-                <!-- USDJPY Settings -->
                 <div id="vector-usdjpy" class="vector-symbol-settings" style="display: none;">
                     <h4 style="margin-top: 20px; color: var(--accent);">USDJPY - H3</h4>
                     <table class="settings-table">
-                        <thead>
-                            <tr>
-                                <th class="translatable">Parameter</th>
-                                <th class="translatable">Recommended Value</th>
-                                <th class="translatable">Description</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th class="translatable">Parameter</th><th class="translatable">Recommended Value</th><th class="translatable">Description</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>Timeframe</td>
-                                <td><code>H3</code></td>
-                                <td class="translatable">3-hour chart for analysis</td>
-                            </tr>
-                            <tr>
-                                <td>Stop Loss %</td>
-                                <td><code>0.5</code></td>
-                                <td class="translatable">Risk percentage per trade</td>
-                            </tr>
-                            <tr>
-                                <td>CCI Period</td>
-                                <td><code>4</code></td>
-                                <td class="translatable">Commodity Channel Index period</td>
-                            </tr>
-                            <tr>
-                                <td>EMA Period</td>
-                                <td><code>75</code></td>
-                                <td class="translatable">Exponential moving average period</td>
-                            </tr>
-                            <tr>
-                                <td>LinReg Period</td>
-                                <td><code>72</code></td>
-                                <td class="translatable">Linear Regression period</td>
-                            </tr>
-                            <tr>
-                                <td>Exit After Bars (Long)</td>
-                                <td><code>4</code></td>
-                                <td class="translatable">Exit long positions after X bars</td>
-                            </tr>
-                            <tr>
-                                <td>Exit After Bars (Short)</td>
-                                <td><code>11</code></td>
-                                <td class="translatable">Exit short positions after X bars</td>
-                            </tr>
+                            <tr><td>Timeframe</td><td><code>H3</code></td><td class="translatable">3-hour chart for analysis</td></tr>
+                            <tr><td>Stop Loss %</td><td><code>0.5</code></td><td class="translatable">Risk percentage per trade</td></tr>
+                            <tr><td>CCI Period</td><td><code>4</code></td><td class="translatable">Commodity Channel Index period</td></tr>
+                            <tr><td>EMA Period</td><td><code>75</code></td><td class="translatable">Exponential moving average period</td></tr>
+                            <tr><td>LinReg Period</td><td><code>72</code></td><td class="translatable">Linear Regression period</td></tr>
+                            <tr><td>Exit After Bars (Long)</td><td><code>4</code></td><td class="translatable">Exit long positions after X bars</td></tr>
+                            <tr><td>Exit After Bars (Short)</td><td><code>11</code></td><td class="translatable">Exit short positions after X bars</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -1396,7 +1560,6 @@
             <!-- GT STORM X -->
             <div class="bot-settings" id="storm-settings">
                 <h3>GT Storm X - <span class="translatable">Recommended Settings</span></h3>
-                
                 <div class="info-box">
                     <div class="icon">📈</div>
                     <div>
@@ -1405,132 +1568,47 @@
                         <strong class="translatable">Recommended Balance:</strong> $1,000+
                     </div>
                 </div>
-
                 <div class="bot-selector" style="margin-top: 20px;">
                     <button class="bot-btn active" onclick="selectStormSymbol('us30', this)">US30</button>
                     <button class="bot-btn" onclick="selectStormSymbol('ger40', this)">GER40</button>
                     <button class="bot-btn" onclick="selectStormSymbol('nas100', this)">NAS100</button>
                 </div>
-
-                <!-- US30 Storm X Settings -->
                 <div class="storm-symbol-settings" id="storm-us30" style="display: block;">
                     <h4 style="margin-top: 20px; color: var(--accent);">US30 - H1</h4>
                     <table class="settings-table">
-                        <thead>
-                            <tr>
-                                <th class="translatable">Parameter</th>
-                                <th class="translatable">Recommended Value</th>
-                                <th class="translatable">Description</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th class="translatable">Parameter</th><th class="translatable">Recommended Value</th><th class="translatable">Description</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>Timeframe</td>
-                                <td><code>H1</code></td>
-                                <td class="translatable">1-hour chart for analysis</td>
-                            </tr>
-                            <tr>
-                                <td>Vortex Period</td>
-                                <td><code>31</code></td>
-                                <td class="translatable">Vortex Indicator calculation period</td>
-                            </tr>
-                            <tr>
-                                <td>Profit Target Coef</td>
-                                <td><code>5</code></td>
-                                <td class="translatable">Profit target coefficient</td>
-                            </tr>
-                            <tr>
-                                <td>Stop Loss Coef</td>
-                                <td><code>8.0</code></td>
-                                <td class="translatable">Stop loss coefficient</td>
-                            </tr>
-                            <tr>
-                                <td>Trailing Stop Coef</td>
-                                <td><code>7.5</code></td>
-                                <td class="translatable">Trailing stop coefficient</td>
-                            </tr>
+                            <tr><td>Timeframe</td><td><code>H1</code></td><td class="translatable">1-hour chart for analysis</td></tr>
+                            <tr><td>Vortex Period</td><td><code>31</code></td><td class="translatable">Vortex Indicator calculation period</td></tr>
+                            <tr><td>Profit Target Coef</td><td><code>5</code></td><td class="translatable">Profit target coefficient</td></tr>
+                            <tr><td>Stop Loss Coef</td><td><code>8.0</code></td><td class="translatable">Stop loss coefficient</td></tr>
+                            <tr><td>Trailing Stop Coef</td><td><code>7.5</code></td><td class="translatable">Trailing stop coefficient</td></tr>
                         </tbody>
                     </table>
                 </div>
-
-                <!-- GER40 Storm X Settings -->
                 <div class="storm-symbol-settings" id="storm-ger40" style="display: none;">
                     <h4 style="margin-top: 20px; color: var(--accent);">GER40 - H1</h4>
                     <table class="settings-table">
-                        <thead>
-                            <tr>
-                                <th class="translatable">Parameter</th>
-                                <th class="translatable">Recommended Value</th>
-                                <th class="translatable">Description</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th class="translatable">Parameter</th><th class="translatable">Recommended Value</th><th class="translatable">Description</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>Timeframe</td>
-                                <td><code>H1</code></td>
-                                <td class="translatable">1-hour chart for analysis</td>
-                            </tr>
-                            <tr>
-                                <td>Vortex Period</td>
-                                <td><code>11</code></td>
-                                <td class="translatable">Vortex Indicator calculation period</td>
-                            </tr>
-                            <tr>
-                                <td>Profit Target Coef</td>
-                                <td><code>15</code></td>
-                                <td class="translatable">Profit target coefficient</td>
-                            </tr>
-                            <tr>
-                                <td>Stop Loss Coef</td>
-                                <td><code>4.5</code></td>
-                                <td class="translatable">Stop loss coefficient</td>
-                            </tr>
-                            <tr>
-                                <td>Trailing Stop Coef</td>
-                                <td><code>1.5</code></td>
-                                <td class="translatable">Trailing stop coefficient</td>
-                            </tr>
+                            <tr><td>Timeframe</td><td><code>H1</code></td><td class="translatable">1-hour chart for analysis</td></tr>
+                            <tr><td>Vortex Period</td><td><code>11</code></td><td class="translatable">Vortex Indicator calculation period</td></tr>
+                            <tr><td>Profit Target Coef</td><td><code>15</code></td><td class="translatable">Profit target coefficient</td></tr>
+                            <tr><td>Stop Loss Coef</td><td><code>4.5</code></td><td class="translatable">Stop loss coefficient</td></tr>
+                            <tr><td>Trailing Stop Coef</td><td><code>1.5</code></td><td class="translatable">Trailing stop coefficient</td></tr>
                         </tbody>
                     </table>
                 </div>
-
-                <!-- NAS100 Storm X Settings -->
                 <div class="storm-symbol-settings" id="storm-nas100" style="display: none;">
                     <h4 style="margin-top: 20px; color: var(--accent);">NAS100 - H1</h4>
                     <table class="settings-table">
-                        <thead>
-                            <tr>
-                                <th class="translatable">Parameter</th>
-                                <th class="translatable">Recommended Value</th>
-                                <th class="translatable">Description</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th class="translatable">Parameter</th><th class="translatable">Recommended Value</th><th class="translatable">Description</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>Timeframe</td>
-                                <td><code>H1</code></td>
-                                <td class="translatable">1-hour chart for analysis</td>
-                            </tr>
-                            <tr>
-                                <td>Vortex Period</td>
-                                <td><code>23</code></td>
-                                <td class="translatable">Vortex Indicator calculation period</td>
-                            </tr>
-                            <tr>
-                                <td>Profit Target Coef</td>
-                                <td><code>9</code></td>
-                                <td class="translatable">Profit target coefficient</td>
-                            </tr>
-                            <tr>
-                                <td>Stop Loss Coef</td>
-                                <td><code>4.5</code></td>
-                                <td class="translatable">Stop loss coefficient</td>
-                            </tr>
-                            <tr>
-                                <td>Trailing Stop Coef</td>
-                                <td><code>3.0</code></td>
-                                <td class="translatable">Trailing stop coefficient</td>
-                            </tr>
+                            <tr><td>Timeframe</td><td><code>H1</code></td><td class="translatable">1-hour chart for analysis</td></tr>
+                            <tr><td>Vortex Period</td><td><code>23</code></td><td class="translatable">Vortex Indicator calculation period</td></tr>
+                            <tr><td>Profit Target Coef</td><td><code>9</code></td><td class="translatable">Profit target coefficient</td></tr>
+                            <tr><td>Stop Loss Coef</td><td><code>4.5</code></td><td class="translatable">Stop loss coefficient</td></tr>
+                            <tr><td>Trailing Stop Coef</td><td><code>3.0</code></td><td class="translatable">Trailing stop coefficient</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -1539,7 +1617,6 @@
             <!-- GT APEX PRO -->
             <div class="bot-settings" id="apex-settings">
                 <h3>GT Apex Pro - <span class="translatable">Recommended Settings</span></h3>
-                
                 <div class="info-box">
                     <div class="icon">📈</div>
                     <div>
@@ -1548,250 +1625,73 @@
                         <strong class="translatable">Recommended Balance:</strong> $1,500+
                     </div>
                 </div>
-
                 <div class="bot-selector">
                     <button class="bot-btn active" onclick="selectApexSymbol('gold-m15', this)">Gold M15</button>
                     <button class="bot-btn" onclick="selectApexSymbol('gold-h1', this)">Gold H1</button>
                     <button class="bot-btn" onclick="selectApexSymbol('usdjpy-m30', this)">USDJPY M30</button>
                     <button class="bot-btn" onclick="selectApexSymbol('us100-m30', this)">US100 M30</button>
                 </div>
-
-                <!-- Gold M15 Settings -->
                 <div class="apex-symbol-settings" id="apex-gold-m15" style="display: block;">
                     <table class="settings-table">
-                        <thead>
-                            <tr>
-                                <th class="translatable">Parameter</th>
-                                <th class="translatable">Recommended Value</th>
-                                <th class="translatable">Description</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th class="translatable">Parameter</th><th class="translatable">Recommended Value</th><th class="translatable">Description</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>Custom Comment</td>
-                                <td><code>GT-ApexProXau15m-Demo</code></td>
-                                <td>Trade comment identifier</td>
-                            </tr>
-                            <tr>
-                                <td>Range Ending Hour</td>
-                                <td><code>23</code></td>
-                                <td>Hour when range ends</td>
-                            </tr>
-                            <tr>
-                                <td>Range Ending Minute</td>
-                                <td><code>0</code></td>
-                                <td>Minute when range ends</td>
-                            </tr>
-                            <tr>
-                                <td>Bars In Range</td>
-                                <td><code>70</code></td>
-                                <td>Number of bars to define range</td>
-                            </tr>
-                            <tr>
-                                <td>Stop Offset (Pips)</td>
-                                <td><code>19</code></td>
-                                <td>Stop loss offset in pips</td>
-                            </tr>
-                            <tr>
-                                <td>Bars Valid</td>
-                                <td><code>70</code></td>
-                                <td>Period for which bars are valid</td>
-                            </tr>
-                            <tr>
-                                <td>Move SL to BE</td>
-                                <td><code>150</code></td>
-                                <td>Move stop loss to breakeven at this profit</td>
-                            </tr>
-                            <tr>
-                                <td>MM Lots</td>
-                                <td><code>0.1</code></td>
-                                <td>Lot size for money management</td>
-                            </tr>
-                            <tr>
-                                <td>Timeframe</td>
-                                <td><code>M15</code></td>
-                                <td>15-minute chart</td>
-                            </tr>
+                            <tr><td>Custom Comment</td><td><code>GT-ApexProXau15m-Demo</code></td><td>Trade comment identifier</td></tr>
+                            <tr><td>Range Ending Hour</td><td><code>23</code></td><td>Hour when range ends</td></tr>
+                            <tr><td>Range Ending Minute</td><td><code>0</code></td><td>Minute when range ends</td></tr>
+                            <tr><td>Bars In Range</td><td><code>70</code></td><td>Number of bars to define range</td></tr>
+                            <tr><td>Stop Offset (Pips)</td><td><code>19</code></td><td>Stop loss offset in pips</td></tr>
+                            <tr><td>Bars Valid</td><td><code>70</code></td><td>Period for which bars are valid</td></tr>
+                            <tr><td>Move SL to BE</td><td><code>150</code></td><td>Move stop loss to breakeven at this profit</td></tr>
+                            <tr><td>MM Lots</td><td><code>0.1</code></td><td>Lot size for money management</td></tr>
+                            <tr><td>Timeframe</td><td><code>M15</code></td><td>15-minute chart</td></tr>
                         </tbody>
                     </table>
                 </div>
-
-                <!-- Gold H1 Settings -->
                 <div class="apex-symbol-settings" id="apex-gold-h1" style="display: none;">
                     <table class="settings-table">
-                        <thead>
-                            <tr>
-                                <th class="translatable">Parameter</th>
-                                <th class="translatable">Recommended Value</th>
-                                <th class="translatable">Description</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th class="translatable">Parameter</th><th class="translatable">Recommended Value</th><th class="translatable">Description</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>Custom Comment</td>
-                                <td><code>GT-ApexProXau1h-Demo</code></td>
-                                <td>Trade comment identifier</td>
-                            </tr>
-                            <tr>
-                                <td>Range Ending Hour</td>
-                                <td><code>20</code></td>
-                                <td>Hour when range ends</td>
-                            </tr>
-                            <tr>
-                                <td>Range Ending Minute</td>
-                                <td><code>0</code></td>
-                                <td>Minute when range ends</td>
-                            </tr>
-                            <tr>
-                                <td>Bars In Range</td>
-                                <td><code>85</code></td>
-                                <td>Number of bars to define range</td>
-                            </tr>
-                            <tr>
-                                <td>Stop Offset (Pips)</td>
-                                <td><code>20</code></td>
-                                <td>Stop loss offset in pips</td>
-                            </tr>
-                            <tr>
-                                <td>Bars Valid</td>
-                                <td><code>5</code></td>
-                                <td>Period for which bars are valid</td>
-                            </tr>
-                            <tr>
-                                <td>Move SL to BE</td>
-                                <td><code>175</code></td>
-                                <td>Move stop loss to breakeven at this profit</td>
-                            </tr>
-                            <tr>
-                                <td>MM Lots</td>
-                                <td><code>0.1</code></td>
-                                <td>Lot size for money management</td>
-                            </tr>
-                            <tr>
-                                <td>Timeframe</td>
-                                <td><code>H1</code></td>
-                                <td>1-hour chart</td>
-                            </tr>
+                            <tr><td>Custom Comment</td><td><code>GT-ApexProXau1h-Demo</code></td><td>Trade comment identifier</td></tr>
+                            <tr><td>Range Ending Hour</td><td><code>20</code></td><td>Hour when range ends</td></tr>
+                            <tr><td>Range Ending Minute</td><td><code>0</code></td><td>Minute when range ends</td></tr>
+                            <tr><td>Bars In Range</td><td><code>85</code></td><td>Number of bars to define range</td></tr>
+                            <tr><td>Stop Offset (Pips)</td><td><code>20</code></td><td>Stop loss offset in pips</td></tr>
+                            <tr><td>Bars Valid</td><td><code>5</code></td><td>Period for which bars are valid</td></tr>
+                            <tr><td>Move SL to BE</td><td><code>175</code></td><td>Move stop loss to breakeven at this profit</td></tr>
+                            <tr><td>MM Lots</td><td><code>0.1</code></td><td>Lot size for money management</td></tr>
+                            <tr><td>Timeframe</td><td><code>H1</code></td><td>1-hour chart</td></tr>
                         </tbody>
                     </table>
                 </div>
-
-                <!-- USDJPY M30 Settings -->
                 <div class="apex-symbol-settings" id="apex-usdjpy-m30" style="display: none;">
                     <table class="settings-table">
-                        <thead>
-                            <tr>
-                                <th class="translatable">Parameter</th>
-                                <th class="translatable">Recommended Value</th>
-                                <th class="translatable">Description</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th class="translatable">Parameter</th><th class="translatable">Recommended Value</th><th class="translatable">Description</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>Custom Comment</td>
-                                <td><code>GT-ApexProJpy30m-Demo</code></td>
-                                <td>Trade comment identifier</td>
-                            </tr>
-                            <tr>
-                                <td>Range Ending Hour</td>
-                                <td><code>23</code></td>
-                                <td>Hour when range ends</td>
-                            </tr>
-                            <tr>
-                                <td>Range Ending Minute</td>
-                                <td><code>0</code></td>
-                                <td>Minute when range ends</td>
-                            </tr>
-                            <tr>
-                                <td>Bars In Range</td>
-                                <td><code>90</code></td>
-                                <td>Number of bars to define range</td>
-                            </tr>
-                            <tr>
-                                <td>Stop Offset (Pips)</td>
-                                <td><code>17</code></td>
-                                <td>Stop loss offset in pips</td>
-                            </tr>
-                            <tr>
-                                <td>Bars Valid</td>
-                                <td><code>65</code></td>
-                                <td>Period for which bars are valid</td>
-                            </tr>
-                            <tr>
-                                <td>Move SL to BE</td>
-                                <td><code>200</code></td>
-                                <td>Move stop loss to breakeven at this profit</td>
-                            </tr>
-                            <tr>
-                                <td>MM Lots</td>
-                                <td><code>0.1</code></td>
-                                <td>Lot size for money management</td>
-                            </tr>
-                            <tr>
-                                <td>Timeframe</td>
-                                <td><code>M30</code></td>
-                                <td>30-minute chart</td>
-                            </tr>
+                            <tr><td>Custom Comment</td><td><code>GT-ApexProJpy30m-Demo</code></td><td>Trade comment identifier</td></tr>
+                            <tr><td>Range Ending Hour</td><td><code>23</code></td><td>Hour when range ends</td></tr>
+                            <tr><td>Range Ending Minute</td><td><code>0</code></td><td>Minute when range ends</td></tr>
+                            <tr><td>Bars In Range</td><td><code>90</code></td><td>Number of bars to define range</td></tr>
+                            <tr><td>Stop Offset (Pips)</td><td><code>17</code></td><td>Stop loss offset in pips</td></tr>
+                            <tr><td>Bars Valid</td><td><code>65</code></td><td>Period for which bars are valid</td></tr>
+                            <tr><td>Move SL to BE</td><td><code>200</code></td><td>Move stop loss to breakeven at this profit</td></tr>
+                            <tr><td>MM Lots</td><td><code>0.1</code></td><td>Lot size for money management</td></tr>
+                            <tr><td>Timeframe</td><td><code>M30</code></td><td>30-minute chart</td></tr>
                         </tbody>
                     </table>
                 </div>
-
-                <!-- US100 M30 Settings -->
                 <div class="apex-symbol-settings" id="apex-us100-m30" style="display: none;">
                     <table class="settings-table">
-                        <thead>
-                            <tr>
-                                <th class="translatable">Parameter</th>
-                                <th class="translatable">Recommended Value</th>
-                                <th class="translatable">Description</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th class="translatable">Parameter</th><th class="translatable">Recommended Value</th><th class="translatable">Description</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>Custom Comment</td>
-                                <td><code>GT-ApexProNas10030m-Demo</code></td>
-                                <td>Trade comment identifier</td>
-                            </tr>
-                            <tr>
-                                <td>Range Ending Hour</td>
-                                <td><code>23</code></td>
-                                <td>Hour when range ends</td>
-                            </tr>
-                            <tr>
-                                <td>Range Ending Minute</td>
-                                <td><code>0</code></td>
-                                <td>Minute when range ends</td>
-                            </tr>
-                            <tr>
-                                <td>Bars In Range</td>
-                                <td><code>80</code></td>
-                                <td>Number of bars to define range</td>
-                            </tr>
-                            <tr>
-                                <td>Stop Offset (Pips)</td>
-                                <td><code>16</code></td>
-                                <td>Stop loss offset in pips</td>
-                            </tr>
-                            <tr>
-                                <td>Bars Valid</td>
-                                <td><code>30</code></td>
-                                <td>Period for which bars are valid</td>
-                            </tr>
-                            <tr>
-                                <td>Move SL to BE</td>
-                                <td><code>175</code></td>
-                                <td>Move stop loss to breakeven at this profit</td>
-                            </tr>
-                            <tr>
-                                <td>MM Lots</td>
-                                <td><code>0.1</code></td>
-                                <td>Lot size for money management</td>
-                            </tr>
-                            <tr>
-                                <td>Timeframe</td>
-                                <td><code>M30</code></td>
-                                <td>30-minute chart</td>
-                            </tr>
+                            <tr><td>Custom Comment</td><td><code>GT-ApexProNas10030m-Demo</code></td><td>Trade comment identifier</td></tr>
+                            <tr><td>Range Ending Hour</td><td><code>23</code></td><td>Hour when range ends</td></tr>
+                            <tr><td>Range Ending Minute</td><td><code>0</code></td><td>Minute when range ends</td></tr>
+                            <tr><td>Bars In Range</td><td><code>80</code></td><td>Number of bars to define range</td></tr>
+                            <tr><td>Stop Offset (Pips)</td><td><code>16</code></td><td>Stop loss offset in pips</td></tr>
+                            <tr><td>Bars Valid</td><td><code>30</code></td><td>Period for which bars are valid</td></tr>
+                            <tr><td>Move SL to BE</td><td><code>175</code></td><td>Move stop loss to breakeven at this profit</td></tr>
+                            <tr><td>MM Lots</td><td><code>0.1</code></td><td>Lot size for money management</td></tr>
+                            <tr><td>Timeframe</td><td><code>M30</code></td><td>30-minute chart</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -1809,7 +1709,6 @@
         <!-- SUPPORT SECTION -->
         <div class="section">
             <h2><span class="icon">💬</span><span class="translatable">Support & Resources</span></h2>
-            
             <div class="info-box">
                 <div class="icon">📧</div>
                 <div>
@@ -1822,7 +1721,6 @@
                     </ul>
                 </div>
             </div>
-
             <div class="success-box">
                 <div class="icon">🎓</div>
                 <div>
@@ -1846,17 +1744,90 @@
     </footer>
 
     <script>
-        // Language Translations
         const translations = {
             en: {
                 'Complete Setup Guide': 'Complete Setup Guide',
                 'Everything you need to install, configure, and optimize your GTAlgo trading bots': 'Everything you need to install, configure, and optimize your GTAlgo trading bots',
+                'What Are Trading Bots?': 'What Are Trading Bots?',
                 'Installation': 'Installation',
                 'VPS & Broker': 'VPS & Broker',
                 'Demo Setup': 'Demo Setup',
                 'License': 'License',
                 'Backtesting': 'Backtesting',
                 'Settings': 'Settings',
+                'What Are Trading Bots? A Beginner\'s Guide': 'What Are Trading Bots? A Beginner\'s Guide',
+                'If you\'ve never traded before and have no idea what a "trading bot" is — <strong>this section is for you.</strong> We\'ll explain everything from scratch, simply and clearly, before moving on to the technical setup.': 'If you\'ve never traded before and have no idea what a "trading bot" is — <strong>this section is for you.</strong> We\'ll explain everything from scratch, simply and clearly, before moving on to the technical setup.',
+                'First: What is Trading?': 'First: What is Trading?',
+                'Trading means <strong>buying and selling financial assets</strong> — like stocks, gold, currencies, or indices (like the S&P 500) — with the goal of making a profit. The idea is simple: buy when the price is low, sell when the price is high.': 'Trading means <strong>buying and selling financial assets</strong> — like stocks, gold, currencies, or indices (like the S&P 500) — with the goal of making a profit. The idea is simple: buy when the price is low, sell when the price is high.',
+                '<strong>Simple analogy:</strong> Imagine you buy 10 kg of apples at the market for €1/kg. The next day, apples become scarce and the price rises to €1.50/kg. You sell them and make €5 profit. That\'s exactly what trading is — but with financial assets instead of apples, and the transactions happen in seconds, 24/7.': '<strong>Simple analogy:</strong> Imagine you buy 10 kg of apples at the market for €1/kg. The next day, apples become scarce and the price rises to €1.50/kg. You sell them and make €5 profit. That\'s exactly what trading is — but with financial assets instead of apples, and the transactions happen in seconds, 24/7.',
+                'Financial markets move constantly — prices go up and down every second. Professional traders sit in front of screens all day trying to predict these movements. But there\'s a problem: <strong>humans get tired, emotional, and make mistakes.</strong>': 'Financial markets move constantly — prices go up and down every second. Professional traders sit in front of screens all day trying to predict these movements. But there\'s a problem: <strong>humans get tired, emotional, and make mistakes.</strong>',
+                'So, What is a Trading Bot?': 'So, What is a Trading Bot?',
+                'A trading bot (also called an EA — Expert Advisor) is a <strong>computer program that trades automatically on your behalf.</strong> It analyzes the market, makes decisions, and executes buy/sell orders — all without you needing to do anything.': 'A trading bot (also called an EA — Expert Advisor) is a <strong>computer program that trades automatically on your behalf.</strong> It analyzes the market, makes decisions, and executes buy/sell orders — all without you needing to do anything.',
+                'It Watches': 'It Watches',
+                'The bot analyzes price charts 24/7, looking for specific patterns or signals that indicate a good trading opportunity.': 'The bot analyzes price charts 24/7, looking for specific patterns or signals that indicate a good trading opportunity.',
+                'It Thinks': 'It Thinks',
+                'Based on a pre-programmed strategy (a set of rules), the bot decides: "now is a good time to buy" or "now is a good time to sell".': 'Based on a pre-programmed strategy (a set of rules), the bot decides: "now is a good time to buy" or "now is a good time to sell".',
+                'It Acts': 'It Acts',
+                'In milliseconds, the bot executes the trade through your broker account — faster than any human could.': 'In milliseconds, the bot executes the trade through your broker account — faster than any human could.',
+                'It Protects': 'It Protects',
+                'The bot also manages risk automatically — setting stop losses so you don\'t lose more than a predefined amount on any trade.': 'The bot also manages risk automatically — setting stop losses so you don\'t lose more than a predefined amount on any trade.',
+                'How Does a Trading Bot Work? Step by Step': 'How Does a Trading Bot Work? Step by Step',
+                '1. Market Analysis': '1. Market Analysis',
+                'The bot continuously reads price data — every candle, every movement. It uses mathematical indicators (like RSI, EMA, CCI) to understand the current state of the market.': 'The bot continuously reads price data — every candle, every movement. It uses mathematical indicators (like RSI, EMA, CCI) to understand the current state of the market.',
+                '2. Signal Detection': '2. Signal Detection',
+                'When the market conditions match the bot\'s strategy rules (e.g. "price is below the 50-period average AND RSI is under 30"), the bot generates a signal: "buy now".': 'When the market conditions match the bot\'s strategy rules (e.g. "price is below the 50-period average AND RSI is under 30"), the bot generates a signal: "buy now".',
+                '3. Order Execution': '3. Order Execution',
+                'The bot instantly sends the order to your broker. It specifies the asset, quantity, direction (buy/sell), stop loss (maximum loss), and take profit (target profit).': 'The bot instantly sends the order to your broker. It specifies the asset, quantity, direction (buy/sell), stop loss (maximum loss), and take profit (target profit).',
+                '4. Position Management': '4. Position Management',
+                'While the trade is open, the bot monitors it continuously. It can move the stop loss to protect profit (trailing stop) or exit early if market conditions change.': 'While the trade is open, the bot monitors it continuously. It can move the stop loss to protect profit (trailing stop) or exit early if market conditions change.',
+                '5. Closing the Trade': '5. Closing the Trade',
+                'The trade closes automatically when either the profit target is reached, the stop loss is hit, or the bot\'s exit conditions are met. Profit (or loss) is immediately reflected in your account.': 'The trade closes automatically when either the profit target is reached, the stop loss is hit, or the bot\'s exit conditions are met. Profit (or loss) is immediately reflected in your account.',
+                'Trading Bot vs Human Trader': 'Trading Bot vs Human Trader',
+                'Here\'s why many traders choose to automate their strategies:': 'Here\'s why many traders choose to automate their strategies:',
+                '❌ Human Trader': '❌ Human Trader',
+                'Gets tired, distracted, needs sleep': 'Gets tired, distracted, needs sleep',
+                'Makes emotional decisions (fear & greed)': 'Makes emotional decisions (fear & greed)',
+                'Can only watch a few charts at once': 'Can only watch a few charts at once',
+                'Slow to react — misses entries': 'Slow to react — misses entries',
+                'Inconsistent — same setup, different decision': 'Inconsistent — same setup, different decision',
+                'Panics during market volatility': 'Panics during market volatility',
+                '✅ Trading Bot': '✅ Trading Bot',
+                'Runs 24/7 without rest': 'Runs 24/7 without rest',
+                'Zero emotions — follows rules 100%': 'Zero emotions — follows rules 100%',
+                'Monitors multiple markets simultaneously': 'Monitors multiple markets simultaneously',
+                'Executes in milliseconds': 'Executes in milliseconds',
+                'Perfectly consistent — same rules, always': 'Perfectly consistent — same rules, always',
+                'Unaffected by market news or volatility': 'Unaffected by market news or volatility',
+                'What is MetaTrader 5 (MT5)?': 'What is MetaTrader 5 (MT5)?',
+                'MetaTrader 5 is the <strong>platform (software) where trading bots run.</strong> Think of it as the "operating system" for your bot. It connects to your broker, displays the charts, and gives the bot the tools it needs to analyze the market and execute trades.': 'MetaTrader 5 is the <strong>platform (software) where trading bots run.</strong> Think of it as the "operating system" for your bot. It connects to your broker, displays the charts, and gives the bot the tools it needs to analyze the market and execute trades.',
+                '<strong>Simple analogy:</strong> If your trading bot is an app, then MetaTrader 5 is the smartphone it runs on. Without MT5, the bot has no way to connect to the market, see prices, or place orders. That\'s why we need to install and configure MT5 as the first step.': '<strong>Simple analogy:</strong> If your trading bot is an app, then MetaTrader 5 is the smartphone it runs on. Without MT5, the bot has no way to connect to the market, see prices, or place orders. That\'s why we need to install and configure MT5 as the first step.',
+                'What is a Broker?': 'What is a Broker?',
+                'A broker is a <strong>licensed company that acts as an intermediary between you and the financial markets.</strong> When your bot decides to buy gold, it\'s the broker who actually executes that order in the real market. The broker holds your money and processes all transactions.': 'A broker is a <strong>licensed company that acts as an intermediary between you and the financial markets.</strong> When your bot decides to buy gold, it\'s the broker who actually executes that order in the real market. The broker holds your money and processes all transactions.',
+                'The Broker\'s Role': 'The Broker\'s Role',
+                'Holds your deposited funds, executes your trades, and provides access to financial markets. Regulated by financial authorities for your protection.': 'Holds your deposited funds, executes your trades, and provides access to financial markets. Regulated by financial authorities for your protection.',
+                'How Brokers Earn': 'How Brokers Earn',
+                'Brokers earn through the "spread" (difference between buy and sell price) or small commissions per trade. This is how they provide their services.': 'Brokers earn through the "spread" (difference between buy and sell price) or small commissions per trade. This is how they provide their services.',
+                'Demo Account': 'Demo Account',
+                'Brokers offer free demo accounts with virtual money so you can test everything without risking real funds. Perfect for beginners.': 'Brokers offer free demo accounts with virtual money so you can test everything without risking real funds. Perfect for beginners.',
+                'Common Myths About Trading Bots': 'Common Myths About Trading Bots',
+                'MYTH': 'MYTH',
+                'REALITY': 'REALITY',
+                '"Trading bots always make money"': '"Trading bots always make money"',
+                'No bot has a 100% win rate. Trading involves risk, and even the best strategies can lose trades. The goal is to be profitable over time, not on every single trade.': 'No bot has a 100% win rate. Trading involves risk, and even the best strategies can lose trades. The goal is to be profitable over time, not on every single trade.',
+                '"You need to be a tech expert to use a bot"': '"You need to be a tech expert to use a bot"',
+                'Not at all. GTAlgo bots are designed to be installed and configured by anyone, even with zero technical background. This guide walks you through every step.': 'Not at all. GTAlgo bots are designed to be installed and configured by anyone, even with zero technical background. This guide walks you through every step.',
+                '"Trading bots are illegal or prohibited"': '"Trading bots are illegal or prohibited"',
+                'Automated trading is completely legal and widely used by professional traders and institutions. MetaTrader 5 was built specifically to support trading bots (Expert Advisors).': 'Automated trading is completely legal and widely used by professional traders and institutions. MetaTrader 5 was built specifically to support trading bots (Expert Advisors).',
+                '"Bots require minimal time after initial setup"': '"Bots require minimal time after initial setup"',
+                'Once configured, a trading bot runs independently. You don\'t need to watch the screen all day. Occasional monitoring (a few minutes per day) is recommended to ensure everything is working correctly.': 'Once configured, a trading bot runs independently. You don\'t need to watch the screen all day. Occasional monitoring (a few minutes per day) is recommended to ensure everything is working correctly.',
+                'What Happens to Your Money?': 'What Happens to Your Money?',
+                'Your money is always in <strong>your own broker account</strong> — GTAlgo never has access to your funds. The bot only has permission to place trades on your behalf through MetaTrader 5. You can withdraw your money at any time, directly from your broker.': 'Your money is always in <strong>your own broker account</strong> — GTAlgo never has access to your funds. The bot only has permission to place trades on your behalf through MetaTrader 5. You can withdraw your money at any time, directly from your broker.',
+                'Your funds are always under your control': 'Your funds are always under your control',
+                'GTAlgo bots connect to your MT5 account and place trades, but they cannot withdraw money or transfer funds. Your capital stays in your regulated broker account at all times.': 'GTAlgo bots connect to your MT5 account and place trades, but they cannot withdraw money or transfer funds. Your capital stays in your regulated broker account at all times.',
+                'Important Risk Warning': 'Important Risk Warning',
+                'Trading financial markets carries significant risk of loss. Only invest money you can afford to lose. Past performance of a trading bot does not guarantee future results. Start with a demo account to understand how the bot works before using real funds.': 'Trading financial markets carries significant risk of loss. Only invest money you can afford to lose. Past performance of a trading bot does not guarantee future results. Start with a demo account to understand how the bot works before using real funds.',
+                'Now that you understand the basics, let\'s set everything up. The next step is installing MetaTrader 5 and your GTAlgo bot.': 'Now that you understand the basics, let\'s set everything up. The next step is installing MetaTrader 5 and your GTAlgo bot.',
+                'Start Installation →': 'Start Installation →',
                 'MT5 Installation & Setup': 'MT5 Installation & Setup',
                 'Before You Start': 'Before You Start',
                 'Make sure you have MetaTrader 5 installed and a trading account (demo or real).': 'Make sure you have MetaTrader 5 installed and a trading account (demo or real).',
@@ -2053,34 +2024,109 @@
                 'Diversify across multiple strategies and symbols for better risk management': 'Diversify across multiple strategies and symbols for better risk management',
                 'Keep your MetaTrader 5 platform updated to the latest version': 'Keep your MetaTrader 5 platform updated to the latest version',
                 'All rights reserved.': 'All rights reserved.',
-                'Professional trading bots for MetaTrader 5': 'Professional trading bots for MetaTrader 5'
+                'Professional trading bots for MetaTrader 5': 'Professional trading bots for MetaTrader 5',
+                'Enable AutoTrading': 'Enable AutoTrading'
             },
             ro: {
                 'Complete Setup Guide': 'Ghid Complet de Configurare',
                 'Everything you need to install, configure, and optimize your GTAlgo trading bots': 'Tot ce ai nevoie pentru a instala, configura și optimiza roboții GTAlgo',
+                'What Are Trading Bots?': 'Ce Sunt Roboții de Trading?',
                 'Installation': 'Instalare',
                 'VPS & Broker': 'VPS & Broker',
                 'Demo Setup': 'Configurare Demo',
                 'License': 'Licență',
                 'Backtesting': 'Backtesting',
                 'Settings': 'Setări',
+                'What Are Trading Bots? A Beginner\'s Guide': 'Ce Sunt Roboții de Trading? Ghid pentru Începători',
+                'If you\'ve never traded before and have no idea what a "trading bot" is — <strong>this section is for you.</strong> We\'ll explain everything from scratch, simply and clearly, before moving on to the technical setup.': 'Dacă nu ai tranzacționat niciodată și nu știi ce este un "robot de trading" — <strong>această secțiune este pentru tine.</strong> Îți explicăm totul de la zero, simplu și clar, înainte de a trece la configurarea tehnică.',
+                'First: What is Trading?': 'Întâi: Ce este Trading-ul?',
+                'Trading means <strong>buying and selling financial assets</strong> — like stocks, gold, currencies, or indices (like the S&P 500) — with the goal of making a profit. The idea is simple: buy when the price is low, sell when the price is high.': 'Trading-ul înseamnă <strong>cumpărarea și vânzarea de active financiare</strong> — cum ar fi acțiuni, aur, valute sau indici (precum S&P 500) — cu scopul de a obține profit. Ideea e simplă: cumperi când prețul este mic, vinzi când prețul este mare.',
+                '<strong>Simple analogy:</strong> Imagine you buy 10 kg of apples at the market for €1/kg. The next day, apples become scarce and the price rises to €1.50/kg. You sell them and make €5 profit. That\'s exactly what trading is — but with financial assets instead of apples, and the transactions happen in seconds, 24/7.': '<strong>Analogie simplă:</strong> Imaginează-ți că mergi la piață și cumperi 10 kg de mere cu 1 leu/kg. A doua zi, merele devin rare și prețul crește la 1,50 lei/kg. Le vinzi și câștigi 5 lei profit. Exact asta este trading-ul — dar cu active financiare în loc de mere, iar tranzacțiile se întâmplă în secunde, 24/7.',
+                'Financial markets move constantly — prices go up and down every second. Professional traders sit in front of screens all day trying to predict these movements. But there\'s a problem: <strong>humans get tired, emotional, and make mistakes.</strong>': 'Piețele financiare se mișcă constant — prețurile urcă și coboară în fiecare secundă. Traderii profesioniști stau în fața ecranelor toată ziua încercând să prezică aceste mișcări. Dar există o problemă: <strong>oamenii obosesc, devin emoționali și fac greșeli.</strong>',
+                'So, What is a Trading Bot?': 'Deci, Ce este un Robot de Trading?',
+                'A trading bot (also called an EA — Expert Advisor) is a <strong>computer program that trades automatically on your behalf.</strong> It analyzes the market, makes decisions, and executes buy/sell orders — all without you needing to do anything.': 'Un robot de trading (numit și EA — Expert Advisor) este un <strong>program de calculator care tranzacționează automat în numele tău.</strong> Analizează piața, ia decizii și execută ordine de cumpărare/vânzare — totul fără să trebuiască să faci ceva.',
+                'It Watches': 'Observă',
+                'The bot analyzes price charts 24/7, looking for specific patterns or signals that indicate a good trading opportunity.': 'Robotul analizează graficele de prețuri 24/7, căutând tipare sau semnale specifice care indică o oportunitate bună de tranzacționare.',
+                'It Thinks': 'Gândește',
+                'Based on a pre-programmed strategy (a set of rules), the bot decides: "now is a good time to buy" or "now is a good time to sell".': 'Pe baza unei strategii pre-programate (un set de reguli), robotul decide: "acum e un moment bun să cumpăr" sau "acum e un moment bun să vând".',
+                'It Acts': 'Acționează',
+                'In milliseconds, the bot executes the trade through your broker account — faster than any human could.': 'În milisecunde, robotul execută tranzacția prin contul tău de broker — mai rapid decât ar putea orice om.',
+                'It Protects': 'Protejează',
+                'The bot also manages risk automatically — setting stop losses so you don\'t lose more than a predefined amount on any trade.': 'Robotul gestionează și riscul automat — setând stop loss-uri ca să nu pierzi mai mult decât o sumă predefinită pe orice tranzacție.',
+                'How Does a Trading Bot Work? Step by Step': 'Cum Funcționează un Robot de Trading? Pas cu Pas',
+                '1. Market Analysis': '1. Analiza Pieței',
+                'The bot continuously reads price data — every candle, every movement. It uses mathematical indicators (like RSI, EMA, CCI) to understand the current state of the market.': 'Robotul citește continuu datele de preț — fiecare lumânare, fiecare mișcare. Folosește indicatori matematici (precum RSI, EMA, CCI) pentru a înțelege starea actuală a pieței.',
+                '2. Signal Detection': '2. Detectarea Semnalului',
+                'When the market conditions match the bot\'s strategy rules (e.g. "price is below the 50-period average AND RSI is under 30"), the bot generates a signal: "buy now".': 'Când condițiile pieței se potrivesc cu regulile strategiei robotului (ex. "prețul e sub media de 50 perioade ȘI RSI e sub 30"), robotul generează un semnal: "cumpără acum".',
+                '3. Order Execution': '3. Executarea Ordinului',
+                'The bot instantly sends the order to your broker. It specifies the asset, quantity, direction (buy/sell), stop loss (maximum loss), and take profit (target profit).': 'Robotul trimite imediat ordinul la brokerul tău. Specifică activul, cantitatea, direcția (cumpărare/vânzare), stop loss (pierdere maximă) și take profit (profit țintă).',
+                '4. Position Management': '4. Gestionarea Poziției',
+                'While the trade is open, the bot monitors it continuously. It can move the stop loss to protect profit (trailing stop) or exit early if market conditions change.': 'Cât timp tranzacția este deschisă, robotul o monitorizează continuu. Poate muta stop loss-ul pentru a proteja profitul (trailing stop) sau poate ieși mai devreme dacă condițiile pieței se schimbă.',
+                '5. Closing the Trade': '5. Închiderea Tranzacției',
+                'The trade closes automatically when either the profit target is reached, the stop loss is hit, or the bot\'s exit conditions are met. Profit (or loss) is immediately reflected in your account.': 'Tranzacția se închide automat când fie se atinge ținta de profit, fie se declanșează stop loss-ul, fie sunt îndeplinite condițiile de ieșire ale robotului. Profitul (sau pierderea) se reflectă imediat în contul tău.',
+                'Trading Bot vs Human Trader': 'Robot de Trading vs Trader Uman',
+                'Here\'s why many traders choose to automate their strategies:': 'Iată de ce mulți traderi aleg să-și automatizeze strategiile:',
+                '❌ Human Trader': '❌ Trader Uman',
+                'Gets tired, distracted, needs sleep': 'Obosește, se distrage, are nevoie de somn',
+                'Makes emotional decisions (fear & greed)': 'Ia decizii emoționale (frică și lăcomie)',
+                'Can only watch a few charts at once': 'Poate urmări doar câteva grafice simultan',
+                'Slow to react — misses entries': 'Reacționează lent — pierde intrările',
+                'Inconsistent — same setup, different decision': 'Inconsistent — același setup, decizii diferite',
+                'Panics during market volatility': 'Intră în panică în perioadele de volatilitate',
+                '✅ Trading Bot': '✅ Robot de Trading',
+                'Runs 24/7 without rest': 'Rulează 24/7 fără odihnă',
+                'Zero emotions — follows rules 100%': 'Zero emoții — urmează regulile 100%',
+                'Monitors multiple markets simultaneously': 'Monitorizează mai multe piețe simultan',
+                'Executes in milliseconds': 'Execută în milisecunde',
+                'Perfectly consistent — same rules, always': 'Perfect consistent — aceleași reguli, mereu',
+                'Unaffected by market news or volatility': 'Neafectat de știrile sau volatilitatea pieței',
+                'What is MetaTrader 5 (MT5)?': 'Ce este MetaTrader 5 (MT5)?',
+                'MetaTrader 5 is the <strong>platform (software) where trading bots run.</strong> Think of it as the "operating system" for your bot. It connects to your broker, displays the charts, and gives the bot the tools it needs to analyze the market and execute trades.': 'MetaTrader 5 este <strong>platforma (software-ul) pe care rulează roboții de trading.</strong> Gândește-te la el ca la "sistemul de operare" al robotului tău. Se conectează la broker, afișează graficele și oferă robotului instrumentele necesare pentru a analiza piața și a executa tranzacții.',
+                '<strong>Simple analogy:</strong> If your trading bot is an app, then MetaTrader 5 is the smartphone it runs on. Without MT5, the bot has no way to connect to the market, see prices, or place orders. That\'s why we need to install and configure MT5 as the first step.': '<strong>Analogie simplă:</strong> Dacă robotul tău de trading este o aplicație, atunci MetaTrader 5 este smartphone-ul pe care rulează. Fără MT5, robotul nu are cum să se conecteze la piață, să vadă prețuri sau să plaseze ordine. De aceea trebuie să instalăm și să configurăm MT5 ca prim pas.',
+                'What is a Broker?': 'Ce este un Broker?',
+                'A broker is a <strong>licensed company that acts as an intermediary between you and the financial markets.</strong> When your bot decides to buy gold, it\'s the broker who actually executes that order in the real market. The broker holds your money and processes all transactions.': 'Un broker este o <strong>companie autorizată care acționează ca intermediar între tine și piețele financiare.</strong> Când robotul tău decide să cumpere aur, brokerul este cel care execută efectiv acel ordin pe piața reală. Brokerul îți păstrează banii și procesează toate tranzacțiile.',
+                'The Broker\'s Role': 'Rolul Brokerului',
+                'Holds your deposited funds, executes your trades, and provides access to financial markets. Regulated by financial authorities for your protection.': 'Păstrează fondurile tale depuse, execută tranzacțiile și oferă acces la piețele financiare. Reglementat de autoritățile financiare pentru protecția ta.',
+                'How Brokers Earn': 'Cum Câștigă Brokerii',
+                'Brokers earn through the "spread" (difference between buy and sell price) or small commissions per trade. This is how they provide their services.': 'Brokerii câștigă prin "spread" (diferența dintre prețul de cumpărare și cel de vânzare) sau comisioane mici per tranzacție. Astfel își finanțează serviciile.',
+                'Demo Account': 'Cont Demo',
+                'Brokers offer free demo accounts with virtual money so you can test everything without risking real funds. Perfect for beginners.': 'Brokerii oferă conturi demo gratuite cu bani virtuali, astfel poți testa totul fără a risca fonduri reale. Perfect pentru începători.',
+                'Common Myths About Trading Bots': 'Mituri Comune despre Roboții de Trading',
+                'MYTH': 'MIT',
+                'REALITY': 'REALITATE',
+                '"Trading bots always make money"': '"Roboții de trading câștigă mereu bani"',
+                'No bot has a 100% win rate. Trading involves risk, and even the best strategies can lose trades. The goal is to be profitable over time, not on every single trade.': 'Niciun robot nu are o rată de câștig de 100%. Trading-ul implică risc, iar chiar și cele mai bune strategii pot pierde tranzacții. Scopul este să fii profitabil pe termen lung, nu la fiecare tranzacție în parte.',
+                '"You need to be a tech expert to use a bot"': '"Trebuie să fii expert tehnic pentru a folosi un robot"',
+                'Not at all. GTAlgo bots are designed to be installed and configured by anyone, even with zero technical background. This guide walks you through every step.': 'Deloc. Roboții GTAlgo sunt proiectați să fie instalați și configurați de oricine, chiar și fără cunoștințe tehnice. Acest ghid te îndrumă la fiecare pas.',
+                '"Trading bots are illegal or prohibited"': '"Roboții de trading sunt ilegali sau interzisi"',
+                'Automated trading is completely legal and widely used by professional traders and institutions. MetaTrader 5 was built specifically to support trading bots (Expert Advisors).': 'Trading-ul automatizat este complet legal și utilizat pe scară largă de traderi profesioniști și instituții. MetaTrader 5 a fost construit special pentru a suporta roboții de trading (Expert Advisors).',
+                '"Bots require minimal time after initial setup"': '"Roboții necesită timp minim după configurarea inițială"',
+                'Once configured, a trading bot runs independently. You don\'t need to watch the screen all day. Occasional monitoring (a few minutes per day) is recommended to ensure everything is working correctly.': 'Odată configurat, un robot de trading rulează independent. Nu trebuie să stai la ecran toată ziua. Monitorizarea ocazională (câteva minute pe zi) este recomandată pentru a te asigura că totul funcționează corect.',
+                'What Happens to Your Money?': 'Ce Se Întâmplă cu Banii Tăi?',
+                'Your money is always in <strong>your own broker account</strong> — GTAlgo never has access to your funds. The bot only has permission to place trades on your behalf through MetaTrader 5. You can withdraw your money at any time, directly from your broker.': 'Banii tăi sunt mereu în <strong>propriul tău cont de broker</strong> — GTAlgo nu are niciodată acces la fondurile tale. Robotul are doar permisiunea de a plasa tranzacții în numele tău prin MetaTrader 5. Poți retrage banii oricând, direct de la broker.',
+                'Your funds are always under your control': 'Fondurile tale sunt mereu sub controlul tău',
+                'GTAlgo bots connect to your MT5 account and place trades, but they cannot withdraw money or transfer funds. Your capital stays in your regulated broker account at all times.': 'Roboții GTAlgo se conectează la contul tău MT5 și plasează tranzacții, dar nu pot retrage bani sau transfera fonduri. Capitalul tău rămâne mereu în contul tău reglementat de broker.',
+                'Important Risk Warning': 'Avertisment Important de Risc',
+                'Trading financial markets carries significant risk of loss. Only invest money you can afford to lose. Past performance of a trading bot does not guarantee future results. Start with a demo account to understand how the bot works before using real funds.': 'Tranzacționarea pe piețele financiare implică un risc semnificativ de pierdere. Investește doar bani pe care îți permiți să-i pierzi. Performanța trecută a unui robot de trading nu garantează rezultatele viitoare. Începe cu un cont demo pentru a înțelege cum funcționează robotul înainte de a folosi fonduri reale.',
+                'Now that you understand the basics, let\'s set everything up. The next step is installing MetaTrader 5 and your GTAlgo bot.': 'Acum că înțelegi elementele de bază, să configurăm totul. Următorul pas este instalarea MetaTrader 5 și a robotului GTAlgo.',
+                'Start Installation →': 'Începe Instalarea →',
                 'MT5 Installation & Setup': 'Instalare & Configurare MT5',
-                'Before You Start': 'Înainte să începi',
+                'Before You Start': 'Înainte să Începi',
                 'Make sure you have MetaTrader 5 installed and a trading account (demo or real).': 'Asigură-te că ai MetaTrader 5 instalat și un cont de trading (demo sau real).',
                 'Step 1: Download MetaTrader 5': 'Pasul 1: Descarcă MetaTrader 5',
                 'Download MT5': 'Descarcă MT5',
-                'Visit your broker\'s website or download directly from MetaQuotes:': 'Vizitează site-ul brokerului tău sau descarcă direct de la MetaQuotes:',
+                'Visit your broker\'s website or download directly from MetaQuotes:': 'Vizitează site-ul brokerului sau descarcă direct de la MetaQuotes:',
                 'Copy': 'Copiază',
                 'Install and Open MT5': 'Instalează și Deschide MT5',
-                'Run the installer and follow the on-screen instructions. After installation, open MetaTrader 5.': 'Rulează programul de instalare și urmează instrucțiunile de pe ecran. După instalare, deschide MetaTrader 5.',
+                'Run the installer and follow the on-screen instructions. After installation, open MetaTrader 5.': 'Rulează programul de instalare și urmează instrucțiunile. După instalare, deschide MetaTrader 5.',
                 'Create/Login to Trading Account': 'Creează/Autentifică-te în Cont',
-                'Use your broker credentials to log in, or create a demo account for testing.': 'Folosește credențialele brokerului pentru autentificare sau creează un cont demo pentru testare.',
+                'Use your broker credentials to log in, or create a demo account for testing.': 'Folosește credențialele brokerului sau creează un cont demo pentru testare.',
                 'Step 2: Install Your GTAlgo Bot': 'Pasul 2: Instalează Robotul GTAlgo',
                 'Download the EA File': 'Descarcă Fișierul EA',
                 'After purchase, download the .ex5 file from your Whop dashboard.': 'După achiziție, descarcă fișierul .ex5 din dashboard-ul Whop.',
                 'Open MT5 Data Folder': 'Deschide Folderul de Date MT5',
                 'In MT5, click: <strong>File → Open Data Folder</strong>': 'În MT5, click: <strong>File → Open Data Folder</strong>',
-                'This opens the MQL5 directory where all expert advisors are stored.': 'Aceasta deschide directorul MQL5 unde sunt stocați toți experții automatizați.',
+                'This opens the MQL5 directory where all expert advisors are stored.': 'Se deschide directorul MQL5 unde sunt stocați toți experții automatizați.',
                 'Copy the EA File': 'Copiază Fișierul EA',
                 'Navigate to: <code>MQL5 → Experts</code>': 'Navighează la: <code>MQL5 → Experts</code>',
                 'Paste the downloaded .ex5 file into this folder.': 'Lipește fișierul .ex5 descărcat în acest folder.',
@@ -2092,44 +2138,44 @@
                 'Your GTAlgo bot is now installed and ready to use.': 'Robotul GTAlgo este acum instalat și gata de folosit.',
                 'VPS & Broker Requirements': 'Cerințe VPS & Broker',
                 'Important: 24/7 Operation Required': 'Important: Funcționare 24/7 Necesară',
-                'For your trading bots to work properly, MetaTrader 5 must remain open and connected to the internet 24/7. This means you have two options: keep your computer running continuously, or use a VPS (Virtual Private Server).': 'Pentru ca roboții de trading să funcționeze corect, MetaTrader 5 trebuie să rămână deschis și conectat la internet 24/7. Asta înseamnă că ai două opțiuni: să ții calculatorul pornit continuu sau să folosești un VPS (Virtual Private Server).',
+                'For your trading bots to work properly, MetaTrader 5 must remain open and connected to the internet 24/7. This means you have two options: keep your computer running continuously, or use a VPS (Virtual Private Server).': 'Pentru ca roboții să funcționeze corect, MetaTrader 5 trebuie să rămână deschis și conectat la internet 24/7. Ai două opțiuni: să ții calculatorul pornit continuu sau să folosești un VPS.',
                 'Option 1: Keep Your PC Running 24/7': 'Opțiunea 1: Ține PC-ul Pornit 24/7',
-                'You can keep your personal computer running with MT5 open at all times. However, this has several drawbacks:': 'Poți să ții calculatorul personal pornit cu MT5 deschis permanent. Totuși, aceasta are mai multe dezavantaje:',
-                'High electricity costs from running your PC continuously': 'Costuri mari de electricitate de la rularea continuă a PC-ului',
-                'Risk of missing trades during internet outages or PC restarts': 'Risc de a pierde tranzacții în timpul întreruperilor de internet sau repornirilor PC-ului',
-                'Wear and tear on your personal computer hardware': 'Uzura echipamentului computerului personal',
+                'You can keep your personal computer running with MT5 open at all times. However, this has several drawbacks:': 'Poți ține calculatorul personal pornit cu MT5 deschis permanent. Totuși, aceasta are dezavantaje:',
+                'High electricity costs from running your PC continuously': 'Costuri mari de electricitate',
+                'Risk of missing trades during internet outages or PC restarts': 'Risc de a pierde tranzacții la întreruperi de internet',
+                'Wear and tear on your personal computer hardware': 'Uzura echipamentului computerului',
                 'Limited mobility - you can\'t turn off your PC without stopping the bot': 'Mobilitate limitată - nu poți opri PC-ul fără să oprești robotul',
                 'Option 2: Use a VPS (Recommended)': 'Opțiunea 2: Folosește un VPS (Recomandat)',
                 'What is a VPS?': 'Ce este un VPS?',
-                'A VPS (Virtual Private Server) is a remote computer that runs in the cloud 24/7. You can connect to it from anywhere, install MT5 on it, and your trading bots will run continuously without needing to keep your personal computer on. Think of it as renting a computer that\'s always online and optimized for trading.': 'Un VPS (Virtual Private Server) este un computer la distanță care rulează în cloud 24/7. Te poți conecta la el de oriunde, instalezi MT5 pe el și roboții tăi de trading vor rula continuu fără să fie nevoie să ții calculatorul personal pornit. Gândește-te la el ca la închirierea unui computer care este mereu online și optimizat pentru trading.',
-                'Why Use a VPS for Trading?': 'De Ce să Folosești un VPS pentru Trading?',
-                '<strong>Ultra-Low Latency:</strong> VPS servers are located close to broker servers, ensuring faster order execution': '<strong>Latență Ultra-Scăzută:</strong> Serverele VPS sunt situate aproape de serverele broker-ului, asigurând execuția mai rapidă a ordinelor',
-                '<strong>99.9% Uptime:</strong> Professional-grade infrastructure ensures your bots never miss a trading opportunity': '<strong>Disponibilitate 99.9%:</strong> Infrastructura de nivel profesional asigură că roboții tăi nu pierd niciodată o oportunitate de trading',
-                '<strong>Cost-Effective:</strong> Much cheaper than running your PC 24/7, with lower electricity bills': '<strong>Rentabil:</strong> Mult mai ieftin decât să rulezi PC-ul 24/7, cu facturi mai mici la electricitate',
-                '<strong>Freedom:</strong> Trade from anywhere - your bots run independently of your personal computer': '<strong>Libertate:</strong> Tranzacționează de oriunde - roboții tăi rulează independent de calculatorul personal',
-                '<strong>Professional Environment:</strong> Optimized Windows servers specifically designed for MT5 trading': '<strong>Mediu Profesional:</strong> Servere Windows optimizate special pentru trading MT5',
+                'A VPS (Virtual Private Server) is a remote computer that runs in the cloud 24/7. You can connect to it from anywhere, install MT5 on it, and your trading bots will run continuously without needing to keep your personal computer on. Think of it as renting a computer that\'s always online and optimized for trading.': 'Un VPS (Virtual Private Server) este un computer la distanță care rulează în cloud 24/7. Te poți conecta de oriunde, instalezi MT5 și roboții tăi vor rula continuu fără să ții calculatorul personal pornit.',
+                'Why Use a VPS for Trading?': 'De Ce să Folosești un VPS?',
+                '<strong>Ultra-Low Latency:</strong> VPS servers are located close to broker servers, ensuring faster order execution': '<strong>Latență Ultra-Scăzută:</strong> Serverele VPS sunt aproape de serverele brokerului, asigurând execuție mai rapidă',
+                '<strong>99.9% Uptime:</strong> Professional-grade infrastructure ensures your bots never miss a trading opportunity': '<strong>Disponibilitate 99.9%:</strong> Infrastructura profesională asigură că roboții nu pierd nicio oportunitate',
+                '<strong>Cost-Effective:</strong> Much cheaper than running your PC 24/7, with lower electricity bills': '<strong>Rentabil:</strong> Mult mai ieftin decât să rulezi PC-ul 24/7',
+                '<strong>Freedom:</strong> Trade from anywhere - your bots run independently of your personal computer': '<strong>Libertate:</strong> Tranzacționează de oriunde - roboții rulează independent',
+                '<strong>Professional Environment:</strong> Optimized Windows servers specifically designed for MT5 trading': '<strong>Mediu Profesional:</strong> Servere Windows optimizate pentru MT5',
                 'Recommended VPS Provider': 'Furnizor VPS Recomandat',
-                'We recommend ForexVPS for trading because of their excellent performance, reliability, and specialized infrastructure for forex and CFD trading:': 'Recomandăm ForexVPS pentru trading datorită performanței excelente, fiabilității și infrastructurii specializate pentru trading forex și CFD:',
-                'Ultra-fast servers optimized for MT5 | 99.9% uptime guarantee | 24/7 support': 'Servere ultra-rapide optimizate pentru MT5 | Garanție 99.9% uptime | Suport 24/7',
+                'We recommend ForexVPS for trading because of their excellent performance, reliability, and specialized infrastructure for forex and CFD trading:': 'Recomandăm ForexVPS pentru performanța excelentă, fiabilitate și infrastructura specializată:',
+                'Ultra-fast servers optimized for MT5 | 99.9% uptime guarantee | 24/7 support': 'Servere ultra-rapide pentru MT5 | Garanție 99.9% uptime | Suport 24/7',
                 'Get ForexVPS →': 'Obține ForexVPS →',
-                'You can choose any VPS provider you prefer, but we specifically recommend ForexVPS for their proven track record, excellent speed, strategic server locations near major broker data centers, and competitive pricing. Plans typically start from $12-20/month.': 'Poți alege orice furnizor VPS preferi, dar recomandăm special ForexVPS pentru track record-ul lor dovedit, viteza excelentă, locațiile strategice ale serverelor aproape de centrele de date ale brokerilor majori și prețurile competitive. Planurile încep de obicei de la $12-20/lună.',
+                'You can choose any VPS provider you prefer, but we specifically recommend ForexVPS for their proven track record, excellent speed, strategic server locations near major broker data centers, and competitive pricing. Plans typically start from $12-20/month.': 'Poți alege orice furnizor VPS, dar recomandăm ForexVPS pentru track record-ul dovedit și prețurile competitive. Planurile încep de la $12-20/lună.',
                 'Setting Up MT5 on Your VPS': 'Configurarea MT5 pe VPS',
                 'Purchase VPS Plan': 'Achiziționează Plan VPS',
-                'Choose a plan that suits your needs (minimum 2GB RAM recommended for MT5).': 'Alege un plan care se potrivește nevoilor tale (minim 2GB RAM recomandat pentru MT5).',
+                'Choose a plan that suits your needs (minimum 2GB RAM recommended for MT5).': 'Alege un plan potrivit (minim 2GB RAM recomandat pentru MT5).',
                 'Connect to Your VPS': 'Conectează-te la VPS',
-                'Use Remote Desktop Connection (Windows) or a similar tool to access your VPS. Your VPS provider will send you connection details via email.': 'Folosește Remote Desktop Connection (Windows) sau un tool similar pentru a accesa VPS-ul. Furnizorul VPS îți va trimite detaliile de conexiune pe email.',
+                'Use Remote Desktop Connection (Windows) or a similar tool to access your VPS. Your VPS provider will send you connection details via email.': 'Folosește Remote Desktop Connection (Windows) pentru a accesa VPS-ul. Furnizorul îți va trimite detaliile pe email.',
                 'Install MT5 on VPS': 'Instalează MT5 pe VPS',
-                'Download and install MetaTrader 5 on your VPS just like you would on your personal computer.': 'Descarcă și instalează MetaTrader 5 pe VPS exact ca pe calculatorul personal.',
+                'Download and install MetaTrader 5 on your VPS just like you would on your personal computer.': 'Descarcă și instalează MetaTrader 5 pe VPS la fel ca pe calculatorul personal.',
                 'Install Your Bot': 'Instalează Robotul',
-                'Follow the same installation steps from above to install your GTAlgo bot on the VPS.': 'Urmează aceiași pași de instalare de mai sus pentru a instala robotul GTAlgo pe VPS.',
+                'Follow the same installation steps from above to install your GTAlgo bot on the VPS.': 'Urmează aceiași pași de instalare pentru a instala robotul GTAlgo pe VPS.',
                 'Run 24/7': 'Rulează 24/7',
-                'Once configured, you can disconnect from the VPS and your bot will continue running independently. You can reconnect anytime to check on performance.': 'Odată configurat, te poți deconecta de la VPS și robotul va continua să ruleze independent. Te poți reconecta oricând pentru a verifica performanța.',
+                'Once configured, you can disconnect from the VPS and your bot will continue running independently. You can reconnect anytime to check on performance.': 'Odată configurat, te poți deconecta și robotul va continua să ruleze. Te poți reconecta oricând pentru a verifica performanța.',
                 'Broker Requirements': 'Cerințe Broker',
                 'Choosing the Right Broker': 'Alegerea Brokerului Potrivit',
-                'To trade with GTAlgo bots, you need a reliable broker that supports MetaTrader 5. The broker you choose is crucial for your trading success - they execute your trades, provide market access, and determine your trading conditions like spreads, commissions, and execution speed.': 'Pentru a tranzacționa cu roboții GTAlgo, ai nevoie de un broker de încredere care suportă MetaTrader 5. Brokerul pe care îl alegi este crucial pentru succesul tău în trading - ei execută tranzacțiile tale, oferă acces la piață și determină condițiile de tranzacționare precum spread-urile, comisioanele și viteza de execuție.',
+                'To trade with GTAlgo bots, you need a reliable broker that supports MetaTrader 5. The broker you choose is crucial for your trading success - they execute your trades, provide market access, and determine your trading conditions like spreads, commissions, and execution speed.': 'Pentru a tranzacționa cu roboții GTAlgo, ai nevoie de un broker de încredere care suportă MetaTrader 5. Brokerul ales este crucial pentru succesul tău.',
                 'Recommended Brokers for GTAlgo': 'Brokeri Recomandați pentru GTAlgo',
-                'We recommend these two brokers for their excellent reliability, competitive spreads, fast execution, and MT5 support:': 'Recomandăm acești doi brokeri pentru fiabilitatea lor excelentă, spread-urile competitive, execuția rapidă și suportul MT5:',
-                'One of the world\'s largest forex brokers, known for ultra-tight spreads and lightning-fast execution. Perfect for algorithmic trading with deep liquidity and institutional-grade infrastructure.': 'Unul dintre cei mai mari brokeri forex din lume, cunoscut pentru spread-uri ultra-strânse și execuție fulger. Perfect pentru trading algoritmic cu lichiditate profundă și infrastructură de nivel instituțional.',
+                'We recommend these two brokers for their excellent reliability, competitive spreads, fast execution, and MT5 support:': 'Recomandăm acești doi brokeri pentru fiabilitatea lor excelentă și suportul MT5:',
+                'One of the world\'s largest forex brokers, known for ultra-tight spreads and lightning-fast execution. Perfect for algorithmic trading with deep liquidity and institutional-grade infrastructure.': 'Unul dintre cei mai mari brokeri forex din lume, cunoscut pentru spread-uri ultra-strânse și execuție rapidă. Perfect pentru trading algoritmic.',
                 'Key Features:': 'Caracteristici Cheie:',
                 'Spreads from 0.0 pips on major pairs': 'Spread-uri de la 0.0 pips pe perechi majore',
                 'Ultra-fast execution speed (avg. 40ms)': 'Viteză de execuție ultra-rapidă (medie 40ms)',
@@ -2137,32 +2183,32 @@
                 'Regulated by ASIC, CySEC, FSA': 'Reglementat de ASIC, CySEC, FSA',
                 'Excellent for scalping and automated trading': 'Excelent pentru scalping și trading automatizat',
                 'Open IC Markets Account →': 'Deschide Cont IC Markets →',
-                'Award-winning broker with a strong reputation for transparency and reliability. Offers excellent trading conditions with competitive pricing and top-tier regulation across multiple jurisdictions.': 'Broker premiat cu o reputație solidă pentru transparență și fiabilitate. Oferă condiții excelente de tranzacționare cu prețuri competitive și reglementare de top în multiple jurisdicții.',
+                'Award-winning broker with a strong reputation for transparency and reliability. Offers excellent trading conditions with competitive pricing and top-tier regulation across multiple jurisdictions.': 'Broker premiat cu reputație solidă pentru transparență. Oferă condiții excelente de tranzacționare și reglementare de top.',
                 'Tight spreads from 0.0 pips (Razor account)': 'Spread-uri strânse de la 0.0 pips (cont Razor)',
                 'Advanced trading technology and infrastructure': 'Tehnologie și infrastructură avansată de trading',
                 'Multiple regulatory licenses (FCA, ASIC, CySEC, etc.)': 'Multiple licențe de reglementare (FCA, ASIC, CySEC, etc.)',
-                'Free VPS available for qualifying accounts': 'VPS gratuit disponibil pentru conturile eligibile',
+                'Free VPS available for qualifying accounts': 'VPS gratuit pentru conturile eligibile',
                 '24/5 multilingual customer support': 'Suport clienți multilingv 24/5',
                 'Open Pepperstone Account →': 'Deschide Cont Pepperstone →',
                 'Broker Comparison Tips': 'Sfaturi Comparație Brokeri',
-                'Both brokers are excellent choices for automated trading. IC Markets is ideal if you prioritize the absolute lowest spreads and fastest execution, while Pepperstone offers a great all-around package with additional perks like free VPS for active traders. You can also open demo accounts with both to test their platforms before committing.': 'Ambii brokeri sunt opțiuni excelente pentru trading automatizat. IC Markets este ideal dacă prioritizezi cele mai mici spread-uri absolute și execuția cea mai rapidă, în timp ce Pepperstone oferă un pachet complet excelent cu beneficii suplimentare precum VPS gratuit pentru traderii activi. Poți de asemenea să deschizi conturi demo la ambii pentru a testa platformele înainte de a te angaja.',
+                'Both brokers are excellent choices for automated trading. IC Markets is ideal if you prioritize the absolute lowest spreads and fastest execution, while Pepperstone offers a great all-around package with additional perks like free VPS for active traders. You can also open demo accounts with both to test their platforms before committing.': 'Ambii brokeri sunt alegeri excelente. IC Markets este ideal pentru cele mai mici spread-uri, Pepperstone oferă un pachet complet cu VPS gratuit pentru traderi activi. Poți deschide conturi demo la ambii înainte de a te angaja.',
                 'Using Other Brokers': 'Folosirea Altor Brokeri',
-                'While we recommend IC Markets and Pepperstone, GTAlgo bots work with any broker that supports MetaTrader 5. Make sure your broker offers good execution speed, competitive spreads, and is properly regulated before opening an account.': 'Deși recomandăm IC Markets și Pepperstone, roboții GTAlgo funcționează cu orice broker care suportă MetaTrader 5. Asigură-te că brokerul tău oferă viteză bună de execuție, spread-uri competitive și este reglementat corespunzător înainte de a deschide un cont.',
+                'While we recommend IC Markets and Pepperstone, GTAlgo bots work with any broker that supports MetaTrader 5. Make sure your broker offers good execution speed, competitive spreads, and is properly regulated before opening an account.': 'Deși recomandăm IC Markets și Pepperstone, roboții GTAlgo funcționează cu orice broker care suportă MetaTrader 5. Asigură-te că brokerul este reglementat corespunzător.',
                 'Demo Bot Setup': 'Configurare Robot Demo',
                 'What is a Demo Bot?': 'Ce este un Robot Demo?',
-                'Demo bots are free, limited versions that allow you to test the strategy in backtest mode before purchasing the full version.': 'Roboții demo sunt versiuni gratuite, limitate, care îți permit să testezi strategia în modul backtest înainte de a cumpăra versiunea completă.',
+                'Demo bots are free, limited versions that allow you to test the strategy in backtest mode before purchasing the full version.': 'Roboții demo sunt versiuni gratuite, limitate, care permit testarea strategiei în modul backtest înainte de achiziție.',
                 'How to Use Demo Bots': 'Cum să Folosești Roboții Demo',
                 'Download Demo Version': 'Descarcă Versiunea Demo',
                 'Visit the GTAlgo store and download the demo version of your chosen bot.': 'Vizitează magazinul GTAlgo și descarcă versiunea demo a robotului ales.',
                 'Install in MT5': 'Instalează în MT5',
-                'Follow the same installation steps as above (File → Open Data Folder → MQL5 → Experts).': 'Urmează aceiași pași de instalare ca mai sus (File → Open Data Folder → MQL5 → Experts).',
+                'Follow the same installation steps as above (File → Open Data Folder → MQL5 → Experts).': 'Urmează aceiași pași (File → Open Data Folder → MQL5 → Experts).',
                 'Use in Strategy Tester': 'Folosește în Strategy Tester',
-                'Demo versions can ONLY be used in the Strategy Tester (backtest mode). Press Ctrl+R to open the Strategy Tester and test the bot\'s performance on historical data.': 'Versiunile demo pot fi folosite DOAR în Strategy Tester (modul backtest). Apasă Ctrl+R pentru a deschide Strategy Tester și testa performanța robotului pe date istorice.',
+                'Demo versions can ONLY be used in the Strategy Tester (backtest mode). Press Ctrl+R to open the Strategy Tester and test the bot\'s performance on historical data.': 'Versiunile demo pot fi folosite DOAR în Strategy Tester. Apasă Ctrl+R pentru a-l deschide și testa pe date istorice.',
                 'Demo Limitations': 'Limitări Demo',
-                'Demo versions are restricted to backtest mode only. They cannot be used for live or demo account trading. Upgrade to the full or licensed version for complete functionality.': 'Versiunile demo sunt restricționate doar la modul backtest. Nu pot fi folosite pentru tranzacționare live sau pe cont demo. Upgrade la versiunea completă sau licențiată pentru funcționalitate integrală.',
+                'Demo versions are restricted to backtest mode only. They cannot be used for live or demo account trading. Upgrade to the full or licensed version for complete functionality.': 'Versiunile demo sunt restricționate la modul backtest. Nu pot fi folosite pentru tranzacționare live. Upgrade la versiunea completă pentru funcționalitate integrală.',
                 'License Activation (Licensed Version)': 'Activare Licență (Versiune Licențiată)',
                 'Licensed Bots Only': 'Doar Roboți cu Licență',
-                'This section applies only to licensed versions with subscription-based licensing.': 'Această secțiune se aplică doar versiunilor licențiate cu licențiere bazată pe abonament.',
+                'This section applies only to licensed versions with subscription-based licensing.': 'Această secțiune se aplică doar versiunilor licențiate cu abonament.',
                 'Step 1: Enable WebRequest in MT5': 'Pasul 1: Activează WebRequest în MT5',
                 'Open MT5 Options': 'Deschide Opțiuni MT5',
                 'Go to: <strong>Tools → Options → Expert Advisors</strong>': 'Du-te la: <strong>Tools → Options → Expert Advisors</strong>',
@@ -2179,10 +2225,11 @@
                 'The email you used when purchasing': 'Email-ul folosit la achiziție',
                 'Your unique license key (received via email)': 'Cheia unică de licență (primită pe email)',
                 'Make sure "Allow Algo Trading" is checked, then click OK.': 'Asigură-te că "Allow Algo Trading" este bifat, apoi click OK.',
+                'Enable AutoTrading': 'Activează AutoTrading',
                 'Verify License': 'Verifică Licența',
-                'Check the "Experts" tab in MT5. You should see a success message confirming license validation.': 'Verifică tab-ul "Experts" în MT5. Ar trebui să vezi un mesaj de succes confirmând validarea licenței.',
+                'Check the "Experts" tab in MT5. You should see a success message confirming license validation.': 'Verifică tab-ul "Experts" în MT5. Ar trebui să vezi un mesaj de succes.',
                 'License Active!': 'Licență Activă!',
-                'Your bot is now licensed and ready to trade. The license will be validated automatically every 30 seconds.': 'Robotul tău este acum licențiat și gata să tranzacționeze. Licența va fi validată automat la fiecare 30 de secunde.',
+                'Your bot is now licensed and ready to trade. The license will be validated automatically every 30 seconds.': 'Robotul tău este acum licențiat și gata să tranzacționeze. Licența se validează automat la fiecare 30 de secunde.',
                 'Troubleshooting': 'Rezolvare Probleme',
                 'If you see "License validation FAILED", make sure:': 'Dacă vezi "License validation FAILED", asigură-te că:',
                 'WebRequest URL is correctly added in MT5 settings': 'URL-ul WebRequest este adăugat corect în setările MT5',
@@ -2203,18 +2250,18 @@
                 'Choose testing period (recommended: 1+ year)': 'Alege perioada de testare (recomandat: 1+ an)',
                 'Select "Every tick" for most accurate results': 'Selectează "Every tick" pentru rezultate mai precise',
                 'Adjust EA Parameters': 'Ajustează Parametrii EA',
-                'Click "Expert properties" to customize settings like lot size, risk percentage, etc. (see bot-specific settings below).': 'Click "Expert properties" pentru a personaliza setările precum lot size, procent de risc, etc. (vezi setările specifice fiecărui robot mai jos).',
+                'Click "Expert properties" to customize settings like lot size, risk percentage, etc. (see bot-specific settings below).': 'Click "Expert properties" pentru a personaliza setările (lot size, procent de risc, etc.).',
                 'Start the Test': 'Pornește Testul',
                 'Click the "Start" button and wait for the backtest to complete.': 'Click pe butonul "Start" și așteaptă finalizarea backtestului.',
                 'Analyze Results': 'Analizează Rezultatele',
-                'Review the Results, Graph, and Report tabs to evaluate performance metrics like win rate, profit factor, drawdown, etc.': 'Verifică tab-urile Results, Graph și Report pentru a evalua metrici de performanță precum win rate, profit factor, drawdown, etc.',
+                'Review the Results, Graph, and Report tabs to evaluate performance metrics like win rate, profit factor, drawdown, etc.': 'Verifică tab-urile Results, Graph și Report pentru a evalua metrici de performanță.',
                 'Important Notes': 'Note Importante',
-                'Always use high-quality historical data for accurate results': 'Folosește întotdeauna date istorice de calitate pentru rezultate precise',
+                'Always use high-quality historical data for accurate results': 'Folosește date istorice de calitate pentru rezultate precise',
                 'Past performance does not guarantee future results': 'Performanța trecută nu garantează rezultate viitoare',
-                'Test on multiple timeframes and symbols for validation': 'Testează pe multiple timeframe-uri și simboluri pentru validare',
+                'Test on multiple timeframes and symbols for validation': 'Testează pe multiple timeframe-uri și simboluri',
                 'Use realistic spread and commission settings': 'Folosește setări realiste de spread și comisioane',
                 'Recommended Bot Settings': 'Setări Recomandate pentru Roboți',
-                'Select a bot below to view its optimized backtest settings:': 'Selectează un robot mai jos pentru a vedea setările optimizate de backtest:',
+                'Select a bot below to view its optimized backtest settings:': 'Selectează un robot pentru a vedea setările optimizate:',
                 'Recommended Settings': 'Setări Recomandate',
                 'Strategy Type:': 'Tip Strategie:',
                 'Scalping & Mean Reversion': 'Scalping & Revenire la Medie',
@@ -2248,23 +2295,22 @@
                 'Trailing stop coefficient': 'Coeficient trailing stop',
                 'Breakout System': 'Sistem Breakout',
                 'Risk Disclaimer': 'Avertisment Risc',
-                'These settings are recommendations based on historical backtesting. Always adjust parameters according to your account balance and risk tolerance. Trading involves substantial risk of loss.': 'Aceste setări sunt recomandări bazate pe backtesting istoric. Ajustează întotdeauna parametrii conform soldului contului și toleranței la risc. Tranzacționarea implică risc substanțial de pierdere.',
+                'These settings are recommendations based on historical backtesting. Always adjust parameters according to your account balance and risk tolerance. Trading involves substantial risk of loss.': 'Aceste setări sunt recomandări bazate pe backtesting. Ajustează parametrii conform soldului și toleranței la risc. Tranzacționarea implică risc substanțial.',
                 'Support & Resources': 'Suport & Resurse',
                 'Need Help?': 'Ai Nevoie de Ajutor?',
-                'If you encounter any issues or have questions, reach out through:': 'Dacă întâmpini probleme sau ai întrebări, contactează-ne prin:',
+                'If you encounter any issues or have questions, reach out through:': 'Dacă întâmpini probleme, contactează-ne prin:',
                 'Access via your Whop dashboard': 'Acces prin dashboard-ul Whop',
                 'Pro Tips': 'Sfaturi Pro',
-                'Always start with a demo account to familiarize yourself with the bot': 'Începe întotdeauna cu un cont demo pentru a te familiariza cu robotul',
-                'Monitor your bot\'s performance regularly and adjust settings as needed': 'Monitorizează performanța robotului regulat și ajustează setările după necesitate',
+                'Always start with a demo account to familiarize yourself with the bot': 'Începe întotdeauna cu un cont demo',
+                'Monitor your bot\'s performance regularly and adjust settings as needed': 'Monitorizează performanța regulat și ajustează setările',
                 'Never risk more than 2-3% of your account on a single trade': 'Nu risca niciodată mai mult de 2-3% din cont pe un singur trade',
-                'Diversify across multiple strategies and symbols for better risk management': 'Diversifică pe multiple strategii și simboluri pentru un management mai bun al riscului',
-                'Keep your MetaTrader 5 platform updated to the latest version': 'Menține platforma MetaTrader 5 actualizată la ultima versiune',
+                'Diversify across multiple strategies and symbols for better risk management': 'Diversifică pe multiple strategii și simboluri',
+                'Keep your MetaTrader 5 platform updated to the latest version': 'Menține MetaTrader 5 actualizat la ultima versiune',
                 'All rights reserved.': 'Toate drepturile rezervate.',
                 'Professional trading bots for MetaTrader 5': 'Roboți profesionali de trading pentru MetaTrader 5'
             }
         };
 
-        // Language switcher
         let currentLang = localStorage.getItem('gtalgo-lang') || 'en';
         const originalTexts = new Map();
 
@@ -2275,39 +2321,29 @@
         function setLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('gtalgo-lang', lang);
-
             document.querySelectorAll('.translatable').forEach(el => {
                 const originalKey = originalTexts.get(el);
                 if (originalKey && translations[lang][originalKey]) {
                     el.innerHTML = translations[lang][originalKey];
                 }
             });
-
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.getAttribute('data-lang') === lang) {
-                    btn.classList.add('active');
-                }
+                if (btn.getAttribute('data-lang') === lang) btn.classList.add('active');
             });
         }
 
         setLanguage(currentLang);
 
         document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                setLanguage(btn.getAttribute('data-lang'));
-            });
+            btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
         });
 
-        // Scroll to section
         function scrollToSection(id) {
             const element = document.getElementById(id);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Copy to clipboard
         function copyToClipboard(text, evt) {
             const e = evt || window.event;
             navigator.clipboard.writeText(text).then(() => {
@@ -2315,112 +2351,57 @@
                 if (btn) {
                     const originalText = btn.textContent;
                     btn.textContent = currentLang === 'en' ? 'Copied!' : 'Copiat!';
-                    setTimeout(() => {
-                        btn.textContent = originalText;
-                    }, 2000);
+                    setTimeout(() => { btn.textContent = originalText; }, 2000);
                 }
-            }).catch(err => {
-                console.error('Copy failed:', err);
-                alert('Text copied: ' + text);
-            });
+            }).catch(() => alert('Text copied: ' + text));
         }
 
-        // Bot selector
         function selectBot(botId, btnElement) {
-            console.log('selectBot called:', botId, btnElement);
-            try {
-                document.querySelectorAll('.bot-btn').forEach(btn => btn.classList.remove('active'));
-                document.querySelectorAll('.bot-settings').forEach(settings => settings.classList.remove('active'));
-                
-                if (btnElement) {
-                    btnElement.classList.add('active');
-                }
-                const settingsEl = document.getElementById(botId + '-settings');
-                if (settingsEl) {
-                    settingsEl.classList.add('active');
-                }
-            } catch(e) {
-                console.error('Error in selectBot:', e);
-            }
+            document.querySelectorAll('.bot-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.bot-settings').forEach(settings => settings.classList.remove('active'));
+            if (btnElement) btnElement.classList.add('active');
+            const settingsEl = document.getElementById(botId + '-settings');
+            if (settingsEl) settingsEl.classList.add('active');
         }
 
-        // Vector symbol selector
         function selectVectorSymbol(symbol, btnElement) {
-            const vectorBtns = document.querySelectorAll('#vector-settings .bot-selector .bot-btn');
-            vectorBtns.forEach(btn => btn.classList.remove('active'));
-            if (btnElement) {
-                btnElement.classList.add('active');
-            }
-            
-            document.querySelectorAll('.vector-symbol-settings').forEach(div => {
-                div.style.display = 'none';
-            });
-            
+            document.querySelectorAll('#vector-settings .bot-selector .bot-btn').forEach(btn => btn.classList.remove('active'));
+            if (btnElement) btnElement.classList.add('active');
+            document.querySelectorAll('.vector-symbol-settings').forEach(div => div.style.display = 'none');
             document.getElementById('vector-' + symbol).style.display = 'block';
         }
 
-        // Storm symbol selector
         function selectStormSymbol(symbol, btnElement) {
-            const stormBtns = document.querySelectorAll('#storm-settings .bot-selector .bot-btn');
-            stormBtns.forEach(btn => btn.classList.remove('active'));
-            if (btnElement) {
-                btnElement.classList.add('active');
-            }
-            
-            document.querySelectorAll('.storm-symbol-settings').forEach(div => {
-                div.style.display = 'none';
-            });
-            
+            document.querySelectorAll('#storm-settings .bot-selector .bot-btn').forEach(btn => btn.classList.remove('active'));
+            if (btnElement) btnElement.classList.add('active');
+            document.querySelectorAll('.storm-symbol-settings').forEach(div => div.style.display = 'none');
             document.getElementById('storm-' + symbol).style.display = 'block';
         }
 
-        // Nova symbol selector
         function selectNovaSymbol(symbol, btnElement) {
-            const novaBtns = document.querySelectorAll('#nova-settings .bot-selector .bot-btn');
-            novaBtns.forEach(btn => btn.classList.remove('active'));
-            if (btnElement) {
-                btnElement.classList.add('active');
-            }
-            
-            document.querySelectorAll('.nova-symbol-settings').forEach(div => {
-                div.style.display = 'none';
-            });
-            
+            document.querySelectorAll('#nova-settings .bot-selector .bot-btn').forEach(btn => btn.classList.remove('active'));
+            if (btnElement) btnElement.classList.add('active');
+            document.querySelectorAll('.nova-symbol-settings').forEach(div => div.style.display = 'none');
             document.getElementById('nova-' + symbol).style.display = 'block';
         }
 
-        // Apex symbol selector
         function selectApexSymbol(symbol, btnElement) {
-            const apexBtns = document.querySelectorAll('#apex-settings .bot-selector .bot-btn');
-            apexBtns.forEach(btn => btn.classList.remove('active'));
-            if (btnElement) {
-                btnElement.classList.add('active');
-            }
-            
-            document.querySelectorAll('.apex-symbol-settings').forEach(div => {
-                div.style.display = 'none';
-            });
-            
+            document.querySelectorAll('#apex-settings .bot-selector .bot-btn').forEach(btn => btn.classList.remove('active'));
+            if (btnElement) btnElement.classList.add('active');
+            document.querySelectorAll('.apex-symbol-settings').forEach(div => div.style.display = 'none');
             document.getElementById('apex-' + symbol).style.display = 'block';
         }
 
-        // Mobile touch event handler
         (function() {
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', initMobileHandlers);
             } else {
                 initMobileHandlers();
             }
-
             function initMobileHandlers() {
-                console.log('Initializing mobile handlers...');
-                
                 document.querySelectorAll('button[onclick], .quick-nav-item[onclick]').forEach(function(el) {
                     el.addEventListener('touchstart', function(e) {
-                        console.log('Touch detected on:', el);
-                        if (el.onclick) {
-                            el.onclick.call(el, e);
-                        }
+                        if (el.onclick) el.onclick.call(el, e);
                     }, { passive: false });
                 });
             }
