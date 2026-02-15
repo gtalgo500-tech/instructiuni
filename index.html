@@ -752,31 +752,31 @@
         <div class="section" id="intro">
             <h2><span class="icon">🤖</span><span class="translatable">What Are Trading Bots? A Beginner's Guide</span></h2>
 
-            <p class="intro-lead translatable">
+            <p class="intro-lead translatable" data-key="intro_lead">
                 If you've never traded before and have no idea what a "trading bot" is — <strong>this section is for you.</strong> We'll explain everything from scratch, simply and clearly, before moving on to the technical setup.
             </p>
 
             <!-- What is trading -->
             <h3 class="translatable">First: What is Trading?</h3>
 
-            <p class="translatable">
+            <p class="translatable" data-key="trading_def">
                 Trading means <strong>buying and selling financial assets</strong> — like stocks, gold, currencies, or indices (like the S&P 500) — with the goal of making a profit. The idea is simple: buy when the price is low, sell when the price is high.
             </p>
 
             <div class="analogy-box">
-                <p class="translatable">
+                <p class="translatable" data-key="analogy_apples">
                     <strong>Simple analogy:</strong> Imagine you buy 10 kg of apples at the market for €1/kg. The next day, apples become scarce and the price rises to €1.50/kg. You sell them and make €5 profit. That's exactly what trading is — but with financial assets instead of apples, and the transactions happen in seconds, 24/7.
                 </p>
             </div>
 
-            <p class="translatable">
+            <p class="translatable" data-key="fin_markets">
                 Financial markets move constantly — prices go up and down every second. Professional traders sit in front of screens all day trying to predict these movements. But there's a problem: <strong>humans get tired, emotional, and make mistakes.</strong>
             </p>
 
             <!-- What is a trading bot -->
             <h3 class="translatable">So, What is a Trading Bot?</h3>
 
-            <p class="translatable">
+            <p class="translatable" data-key="bot_def">
                 A trading bot (also called an EA — Expert Advisor) is a <strong>computer program that trades automatically on your behalf.</strong> It analyzes the market, makes decisions, and executes buy/sell orders — all without you needing to do anything.
             </p>
 
@@ -877,21 +877,21 @@
             <!-- What is MetaTrader 5 -->
             <h3 class="translatable">What is MetaTrader 5 (MT5)?</h3>
 
-            <p class="translatable">
+            <p class="translatable" data-key="mt5_def">
                 MetaTrader 5 is the <strong>platform (software) where trading bots run.</strong> Think of it as the "operating system" for your bot. It connects to your broker, displays the charts, and gives the bot the tools it needs to analyze the market and execute trades.
             </p>
 
             <div class="info-box">
                 <div class="icon">💡</div>
                 <div>
-                    <p class="translatable"><strong>Simple analogy:</strong> If your trading bot is an app, then MetaTrader 5 is the smartphone it runs on. Without MT5, the bot has no way to connect to the market, see prices, or place orders. That's why we need to install and configure MT5 as the first step.</p>
+                    <p class="translatable" data-key="mt5_analogy"><strong>Simple analogy:</strong> If your trading bot is an app, then MetaTrader 5 is the smartphone it runs on. Without MT5, the bot has no way to connect to the market, see prices, or place orders. That's why we need to install and configure MT5 as the first step.</p>
                 </div>
             </div>
 
             <!-- What is a broker -->
             <h3 class="translatable">What is a Broker?</h3>
 
-            <p class="translatable">
+            <p class="translatable" data-key="broker_def">
                 A broker is a <strong>licensed company that acts as an intermediary between you and the financial markets.</strong> When your bot decides to buy gold, it's the broker who actually executes that order in the real market. The broker holds your money and processes all transactions.
             </p>
 
@@ -950,7 +950,7 @@
             <!-- What happens with your money -->
             <h3 class="translatable">What Happens to Your Money?</h3>
 
-            <p class="translatable">
+            <p class="translatable" data-key="money_safe">
                 Your money is always in <strong>your own broker account</strong> — GTAlgo never has access to your funds. The bot only has permission to place trades on your behalf through MetaTrader 5. You can withdraw your money at any time, directly from your broker.
             </p>
 
@@ -1715,7 +1715,7 @@
                     <strong class="translatable">Need Help?</strong>
                     <p class="translatable">If you encounter any issues or have questions, reach out through:</p>
                     <ul style="margin-top: 10px; color: var(--text-secondary);">
-                        <li><strong>Email:</strong> support@gtalgo.com</li>
+                        <li><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ea999f9a9a85989eaa8d9e8b868d85c4898587">[email&#160;protected]</a></li>
                         <li><strong>Whop Community:</strong> <span class="translatable">Access via your Whop dashboard</span></li>
                         <li><strong>Website:</strong> https://www.gtalgo.com</li>
                     </ul>
@@ -1743,7 +1743,7 @@
         <p class="translatable">Professional trading bots for MetaTrader 5</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         const translations = {
             en: {
                 'Complete Setup Guide': 'Complete Setup Guide',
@@ -2311,17 +2311,54 @@
             }
         };
 
-        let currentLang = localStorage.getItem('gtalgo-lang') || 'en';
+        // Use in-memory storage (compatible with sandboxed iframes and all browsers)
+        let currentLang = 'en';
+        try { currentLang = localStorage.getItem('gtalgo-lang') || 'en'; } catch(e) {}
+
+        // data-key translations for elements with HTML tags inside or multiline content
+        const dataKeyTranslations = {
+            en: {
+                intro_lead: 'If you\'ve never traded before and have no idea what a "trading bot" is — <strong>this section is for you.</strong> We\'ll explain everything from scratch, simply and clearly, before moving on to the technical setup.',
+                trading_def: 'Trading means <strong>buying and selling financial assets</strong> — like stocks, gold, currencies, or indices (like the S&P 500) — with the goal of making a profit. The idea is simple: buy when the price is low, sell when the price is high.',
+                analogy_apples: '<strong>Simple analogy:</strong> Imagine you buy 10 kg of apples at the market for €1/kg. The next day, apples become scarce and the price rises to €1.50/kg. You sell them and make €5 profit. That\'s exactly what trading is — but with financial assets instead of apples, and the transactions happen in seconds, 24/7.',
+                fin_markets: 'Financial markets move constantly — prices go up and down every second. Professional traders sit in front of screens all day trying to predict these movements. But there\'s a problem: <strong>humans get tired, emotional, and make mistakes.</strong>',
+                bot_def: 'A trading bot (also called an EA — Expert Advisor) is a <strong>computer program that trades automatically on your behalf.</strong> It analyzes the market, makes decisions, and executes buy/sell orders — all without you needing to do anything.',
+                mt5_def: 'MetaTrader 5 is the <strong>platform (software) where trading bots run.</strong> Think of it as the "operating system" for your bot. It connects to your broker, displays the charts, and gives the bot the tools it needs to analyze the market and execute trades.',
+                mt5_analogy: '<strong>Simple analogy:</strong> If your trading bot is an app, then MetaTrader 5 is the smartphone it runs on. Without MT5, the bot has no way to connect to the market, see prices, or place orders. That\'s why we need to install and configure MT5 as the first step.',
+                broker_def: 'A broker is a <strong>licensed company that acts as an intermediary between you and the financial markets.</strong> When your bot decides to buy gold, it\'s the broker who actually executes that order in the real market. The broker holds your money and processes all transactions.',
+                money_safe: 'Your money is always in <strong>your own broker account</strong> — GTAlgo never has access to your funds. The bot only has permission to place trades on your behalf through MetaTrader 5. You can withdraw your money at any time, directly from your broker.'
+            },
+            ro: {
+                intro_lead: 'Dacă nu ai tranzacționat niciodată și nu știi ce este un "robot de trading" — <strong>această secțiune este pentru tine.</strong> Îți explicăm totul de la zero, simplu și clar, înainte de a trece la configurarea tehnică.',
+                trading_def: 'Trading-ul înseamnă <strong>cumpărarea și vânzarea de active financiare</strong> — cum ar fi acțiuni, aur, valute sau indici (precum S&P 500) — cu scopul de a obține profit. Ideea e simplă: cumperi când prețul este mic, vinzi când prețul este mare.',
+                analogy_apples: '<strong>Analogie simplă:</strong> Imaginează-ți că mergi la piață și cumperi 10 kg de mere cu 1 leu/kg. A doua zi, merele devin rare și prețul crește la 1,50 lei/kg. Le vinzi și câștigi 5 lei profit. Exact asta este trading-ul — dar cu active financiare în loc de mere, iar tranzacțiile se întâmplă în secunde, 24/7.',
+                fin_markets: 'Piețele financiare se mișcă constant — prețurile urcă și coboară în fiecare secundă. Traderii profesioniști stau în fața ecranelor toată ziua încercând să prezică aceste mișcări. Dar există o problemă: <strong>oamenii obosesc, devin emoționali și fac greșeli.</strong>',
+                bot_def: 'Un robot de trading (numit și EA — Expert Advisor) este un <strong>program de calculator care tranzacționează automat în numele tău.</strong> Analizează piața, ia decizii și execută ordine de cumpărare/vânzare — totul fără să trebuiască să faci ceva.',
+                mt5_def: 'MetaTrader 5 este <strong>platforma (software-ul) pe care rulează roboții de trading.</strong> Gândește-te la el ca la "sistemul de operare" al robotului tău. Se conectează la broker, afișează graficele și oferă robotului instrumentele necesare pentru a analiza piața și a executa tranzacții.',
+                mt5_analogy: '<strong>Analogie simplă:</strong> Dacă robotul tău de trading este o aplicație, atunci MetaTrader 5 este smartphone-ul pe care rulează. Fără MT5, robotul nu are cum să se conecteze la piață, să vadă prețuri sau să plaseze ordine. De aceea trebuie să instalăm și să configurăm MT5 ca prim pas.',
+                broker_def: 'Un broker este o <strong>companie autorizată care acționează ca intermediar între tine și piețele financiare.</strong> Când robotul tău decide să cumpere aur, brokerul este cel care execută efectiv acel ordin pe piața reală. Brokerul îți păstrează banii și procesează toate tranzacțiile.',
+                money_safe: 'Banii tăi sunt mereu în <strong>propriul tău cont de broker</strong> — GTAlgo nu are niciodată acces la fondurile tale. Robotul are doar permisiunea de a plasa tranzacții în numele tău prin MetaTrader 5. Poți retrage banii oricând, direct de la broker.'
+            }
+        };
+
         const originalTexts = new Map();
 
         document.querySelectorAll('.translatable').forEach(el => {
-            originalTexts.set(el, el.innerHTML);
+            // Store trimmed innerHTML as key to handle whitespace variations
+            originalTexts.set(el, el.innerHTML.trim());
         });
 
         function setLanguage(lang) {
             currentLang = lang;
-            localStorage.setItem('gtalgo-lang', lang);
+            try { localStorage.setItem('gtalgo-lang', lang); } catch(e) {}
             document.querySelectorAll('.translatable').forEach(el => {
+                // First check if element has a data-key (for elements with HTML tags / multiline)
+                const dataKey = el.getAttribute('data-key');
+                if (dataKey && dataKeyTranslations[lang] && dataKeyTranslations[lang][dataKey]) {
+                    el.innerHTML = dataKeyTranslations[lang][dataKey];
+                    return;
+                }
+                // Fall back to innerHTML key matching (trim to handle whitespace)
                 const originalKey = originalTexts.get(el);
                 if (originalKey && translations[lang][originalKey]) {
                     el.innerHTML = translations[lang][originalKey];
@@ -2339,73 +2376,72 @@
             btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
         });
 
-        function scrollToSection(id) {
+        // All functions exposed globally on window so onclick="" works in iframes/sandbox
+        window.scrollToSection = function(id) {
             const element = document.getElementById(id);
             if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        };
 
-        function copyToClipboard(text, evt) {
+        window.copyToClipboard = function(text, evt) {
             const e = evt || window.event;
-            navigator.clipboard.writeText(text).then(() => {
-                const btn = e ? e.target : null;
-                if (btn) {
-                    const originalText = btn.textContent;
-                    btn.textContent = currentLang === 'en' ? 'Copied!' : 'Copiat!';
-                    setTimeout(() => { btn.textContent = originalText; }, 2000);
-                }
-            }).catch(() => alert('Text copied: ' + text));
-        }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    const btn = e ? e.target : null;
+                    if (btn) {
+                        const originalText = btn.textContent;
+                        btn.textContent = currentLang === 'en' ? 'Copied!' : 'Copiat!';
+                        setTimeout(() => { btn.textContent = originalText; }, 2000);
+                    }
+                }).catch(() => {});
+            }
+        };
 
-        function selectBot(botId, btnElement) {
+        window.selectBot = function(botId, btnElement) {
             document.querySelectorAll('.bot-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.bot-settings').forEach(settings => settings.classList.remove('active'));
             if (btnElement) btnElement.classList.add('active');
             const settingsEl = document.getElementById(botId + '-settings');
             if (settingsEl) settingsEl.classList.add('active');
-        }
+        };
 
-        function selectVectorSymbol(symbol, btnElement) {
+        window.selectVectorSymbol = function(symbol, btnElement) {
             document.querySelectorAll('#vector-settings .bot-selector .bot-btn').forEach(btn => btn.classList.remove('active'));
             if (btnElement) btnElement.classList.add('active');
             document.querySelectorAll('.vector-symbol-settings').forEach(div => div.style.display = 'none');
-            document.getElementById('vector-' + symbol).style.display = 'block';
-        }
+            const el = document.getElementById('vector-' + symbol);
+            if (el) el.style.display = 'block';
+        };
 
-        function selectStormSymbol(symbol, btnElement) {
+        window.selectStormSymbol = function(symbol, btnElement) {
             document.querySelectorAll('#storm-settings .bot-selector .bot-btn').forEach(btn => btn.classList.remove('active'));
             if (btnElement) btnElement.classList.add('active');
             document.querySelectorAll('.storm-symbol-settings').forEach(div => div.style.display = 'none');
-            document.getElementById('storm-' + symbol).style.display = 'block';
-        }
+            const el = document.getElementById('storm-' + symbol);
+            if (el) el.style.display = 'block';
+        };
 
-        function selectNovaSymbol(symbol, btnElement) {
+        window.selectNovaSymbol = function(symbol, btnElement) {
             document.querySelectorAll('#nova-settings .bot-selector .bot-btn').forEach(btn => btn.classList.remove('active'));
             if (btnElement) btnElement.classList.add('active');
             document.querySelectorAll('.nova-symbol-settings').forEach(div => div.style.display = 'none');
-            document.getElementById('nova-' + symbol).style.display = 'block';
-        }
+            const el = document.getElementById('nova-' + symbol);
+            if (el) el.style.display = 'block';
+        };
 
-        function selectApexSymbol(symbol, btnElement) {
+        window.selectApexSymbol = function(symbol, btnElement) {
             document.querySelectorAll('#apex-settings .bot-selector .bot-btn').forEach(btn => btn.classList.remove('active'));
             if (btnElement) btnElement.classList.add('active');
             document.querySelectorAll('.apex-symbol-settings').forEach(div => div.style.display = 'none');
-            document.getElementById('apex-' + symbol).style.display = 'block';
-        }
+            const el = document.getElementById('apex-' + symbol);
+            if (el) el.style.display = 'block';
+        };
 
-        (function() {
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initMobileHandlers);
-            } else {
-                initMobileHandlers();
-            }
-            function initMobileHandlers() {
-                document.querySelectorAll('button[onclick], .quick-nav-item[onclick]').forEach(function(el) {
-                    el.addEventListener('touchstart', function(e) {
-                        if (el.onclick) el.onclick.call(el, e);
-                    }, { passive: false });
-                });
-            }
-        })();
+        // Mobile touch support
+        document.querySelectorAll('.quick-nav-item[onclick]').forEach(function(el) {
+            el.addEventListener('touchend', function(e) {
+                e.preventDefault();
+            }, { passive: false });
+        });
     </script>
 </body>
 </html>
